@@ -1,0 +1,70 @@
+---
+description: Cursor agent-transcript directory layout and JSONL shape for audits, jq, and analyze-sessions-style tooling
+globs: .cursor/**/*
+alwaysApply: false
+---
+
+# Cursor agent transcripts (layout + schema)
+
+Use this when **inventorying**, **grep/jq-ing**, or **documenting** Cursor agent chat transcripts (e.g. **analyze-sessions**, session audits). Third-party skills often assume an older layout.
+
+## Where files live
+
+On disk (Windows example):
+
+`%USERPROFILE%\.cursor\projects\<cursor-project-slug>\agent-transcripts\`
+
+`<cursor-project-slug>` is derived from the workspace path (e.g. `c-projects-zonemode`).
+
+## Parent vs subagent
+
+- **Parent session:** one directory named with a **UUID**, containing a single JSONL file **with the same basename**:
+
+  `agent-transcripts/<parent-uuid>/<parent-uuid>.jsonl`
+
+- **Subagent runs:** JSONL files under:
+
+  `agent-transcripts/<parent-uuid>/subagents/<subagent-uuid>.jsonl`
+
+**Session audits should use parent JSONL only** unless you explicitly need subagent detail. Do **not** assume parents are loose `agent-transcripts/*.jsonl` at the top level — that pattern is often empty on current Cursor builds.
+
+## JSONL line shape (typical)
+
+Lines are JSON objects. User turns commonly look like:
+
+```json
+{"role":"user","message":{"content":[{"type":"text","text":"<user_query>\n…\n</user_query>"}]}}
+```
+
+Assistant turns nest **`tool_use`** inside `message.content` arrays.
+
+This is **not** the flat `{"role":"user","content":"..."}` shape some **`jq`** recipes assume.
+
+## jq examples (Cursor)
+
+Extract user text blobs (raw, includes XML-like wrappers):
+
+```bash
+jq -c 'select(.role == "user") | .message.content' < "…/<uuid>.jsonl"
+```
+
+List tool names from assistant messages:
+
+```bash
+jq -c 'select(.role == "assistant") | .. | objects | select(.type? == "tool_use") | .name?' < "…/<uuid>.jsonl"
+```
+
+Role counts:
+
+```bash
+jq -r '.role // empty' < "…/<uuid>.jsonl" | sort | uniq -c
+```
+
+Truncate long strings for piping to review tools: prefer slicing **`message.content`** entries in **`jq`**, not a nonexistent top-level `.content` field.
+
+## Related
+
+- Repo **engineering obstacles** from shipped work: **[HURDLES.md](../../HURDLES.md)**
+- Marketplace skill (may lag Cursor on-disk layout): **[`../skills/paultyng-skill-issue-analyze-sessions/SKILL.md`](../skills/paultyng-skill-issue-analyze-sessions/SKILL.md)**
+
+When that skill’s Phase 1 conflicts with this file, **prefer this rule** for path and schema on this project’s Cursor version.

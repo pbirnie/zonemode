@@ -1,0 +1,58 @@
+---
+description: API call logging and error display standards
+globs: src/**/*.ts, src/**/*.tsx
+alwaysApply: false
+---
+
+# API Call Logging & Error Display
+
+Every outbound API call and its response must be clearly logged and errors must surface to the user.
+
+## Outbound requests
+
+Log **before** the call with:
+- destination URL or provider/model
+- request method
+- a sanitised summary of the payload (never log API keys or secrets)
+
+```typescript
+log.log("API request →", url, { model, method: "POST" });
+```
+
+## Responses
+
+Log the outcome immediately:
+- HTTP status (or SDK-level result status)
+- response body preview on failure (first ~200 chars)
+
+```typescript
+log.log("API response", { status, ok });
+// On failure:
+log.error("API error response", { status, body: text.slice(0, 200) });
+```
+
+## Error responses — extract and display details
+
+Many APIs return structured error bodies (e.g. `{ error: { message, type, code } }`).
+Always attempt to parse and log these fields:
+
+```typescript
+try {
+  const body = await response.json();
+  const detail = body?.error?.message ?? body?.message ?? JSON.stringify(body).slice(0, 200);
+  log.error("API error detail:", detail);
+  // Surface `detail` to the user, not a generic "Request failed"
+} catch {
+  log.error("API error (non-JSON)", { status: response.status });
+}
+```
+
+When relaying errors back to the UI (via `port.postMessage`, `sendResponse`, etc.), include the upstream detail string so the user sees **why** the call failed, not just "Unknown error occurred".
+
+## Checklist for any new or modified API path
+
+1. Outbound log line with URL/provider, method, and model present.
+2. Success log line with status.
+3. Error branch parses the response body for detail fields.
+4. Error message sent to the UI includes the parsed detail.
+5. No API keys, tokens, or secrets appear in any log line.

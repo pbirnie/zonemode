@@ -1,0 +1,212 @@
+[
+  {
+    "videoId": "tb01reactext",
+    "title": "How to Build a Chrome Extension with React and TypeScript",
+    "shortDescription": "Step-by-step guide to MV3, bundlers, and messaging between popup and content scripts.",
+    "author": "Dev Channel",
+    "channel": "Dev Channel",
+    "viewCount": 842312,
+    "keywords": ["chrome extension", "react", "typescript"],
+    "tags": ["tutorial", "web dev"]
+  },
+  {
+    "videoId": "tb02rustsys",
+    "title": "Systems Programming in Rust for Beginners",
+    "shortDescription": "Ownership, borrowing, and building CLI tools without memory bugs.",
+    "author": "Rust Academy",
+    "channel": "Rust Academy",
+    "viewCount": 956210,
+    "keywords": ["rust", "systems programming"],
+    "tags": ["coding", "backend"]
+  },
+  {
+    "videoId": "tb03sourdough",
+    "title": "Perfect Sourdough Bread — Folding and Fermentation",
+    "shortDescription": "Hydration ratios, starter maintenance, and oven spring tips for home bakers.",
+    "author": "Kitchen Notes",
+    "channel": "Kitchen Notes",
+    "viewCount": 1280094,
+    "keywords": ["sourdough", "baking", "bread"],
+    "tags": ["cooking", "recipe"]
+  },
+  {
+    "videoId": "tb04valorant",
+    "title": "Valorant Ranked Grind — Controller Lineups on Bind",
+    "shortDescription": "Viper and Omen smokes for A site executes and retakes.",
+    "author": "FPS Grind",
+    "channel": "FPS Grind",
+    "viewCount": 3456200,
+    "keywords": ["valorant", "fps", "gaming"],
+    "tags": ["esports", "tips"]
+  },
+  {
+    "videoId": "tb05jazzpiano",
+    "title": "Jazz Piano Voicings — ii-V-I in All Keys",
+    "shortDescription": "Rootless voicings and voice leading for comping behind a soloist.",
+    "author": "Blue Note Lab",
+    "channel": "Blue Note Lab",
+    "viewCount": 512890,
+    "keywords": ["jazz", "piano", "music theory"],
+    "tags": ["lesson", "keyboard"]
+  },
+  {
+    "videoId": "tb06climate",
+    "title": "Morning Briefing: Climate Summit Outcomes and Grid Policy",
+    "shortDescription": "What the new emissions targets mean for utilities and electric vehicles.",
+    "author": "World Desk",
+    "channel": "World Desk",
+    "viewCount": 89234,
+    "keywords": ["news", "climate", "policy"],
+    "tags": ["politics", "environment"]
+  },
+  {
+    "videoId": "tb06bainews",
+    "title": "Weekly Tech Roundup",
+    "shortDescription": "Highlights from the week in AI and gadgets.",
+    "author": "World Desk",
+    "channel": "World Desk",
+    "viewCount": 178450,
+    "keywords": ["AI news", "technology"],
+    "tags": ["briefing"]
+  },
+  {
+    "videoId": "tb07crispr",
+    "title": "CRISPR Advances — Lab Techniques Explained Simply",
+    "shortDescription": "Gene editing basics, off-target effects, and recent clinical trials.",
+    "author": "Science Weekly",
+    "channel": "Science Weekly",
+    "viewCount": 2340098,
+    "keywords": ["genetics", "biology", "crispr"],
+    "tags": ["science", "medicine"]
+  },
+  {
+    "videoId": "tb08minecraft",
+    "title": "Minecraft Redstone Computers for Beginners",
+    "shortDescription": "Build a simple ALU and understand tick timing in Java edition.",
+    "author": "Block Tech",
+    "channel": "Block Tech",
+    "viewCount": 5670034,
+    "keywords": ["minecraft", "redstone", "tutorial"],
+    "tags": ["gaming", "sandbox"]
+  },
+  {
+    "videoId": "tb09indianfood",
+    "title": "Butter Chicken — Restaurant Style at Home",
+    "shortDescription": "Marinade, tomato gravy, fenugreek, and finishing with cream.",
+    "author": "Spice Route",
+    "channel": "Spice Route",
+    "viewCount": 3210456,
+    "keywords": ["indian food", "cooking", "curry"],
+    "tags": ["recipe", "dinner"]
+  },
+  {
+    "videoId": "tb10eldenring",
+    "title": "Elden Ring Boss Guide — No Hit Tips for Malenia",
+    "shortDescription": "Phase two waterfowl dodge timing and spirit ash synergies.",
+    "author": "Souls Archive",
+    "channel": "Souls Archive",
+    "viewCount": 9102234,
+    "keywords": ["elden ring", "soulslike", "gaming"],
+    "tags": ["guide", "rpg"]
+  },
+  {
+    "videoId": "tb11classical",
+    "title": "Beethoven Sonata No. 8 — Interpretation Masterclass",
+    "shortDescription": "Phrasing the first movement and control in the slow intro.",
+    "author": "Concert Hall",
+    "channel": "Concert Hall",
+    "viewCount": 289456,
+    "keywords": ["classical", "piano", "beethoven"],
+    "tags": ["music", "performance"]
+  },
+  {
+    "videoId": "tb12stocknews",
+    "title": "Market Close: Tech Earnings and Fed Minutes",
+    "shortDescription": "Mega-cap reactions, rate path expectations, and credit spreads.",
+    "author": "Finance Wire",
+    "channel": "Finance Wire",
+    "viewCount": 156789,
+    "keywords": ["stocks", "finance", "news"],
+    "tags": ["markets", "economy"]
+  },
+  {
+    "videoId": "tb13k8s",
+    "title": "Kubernetes Networking — Services, Ingress, and CNI Overview",
+    "shortDescription": "When to use ClusterIP vs LoadBalancer and debugging DNS in pods.",
+    "author": "Cloud Native Weekly",
+    "channel": "Cloud Native Weekly",
+    "viewCount": 445601,
+    "keywords": ["kubernetes", "devops", "containers"],
+    "tags": ["tutorial", "infra"]
+  },
+  {
+    "videoId": "tb14astronomy",
+    "title": "James Webb Images — What We Learned About Early Galaxies",
+    "shortDescription": "Spectroscopy results and surprises in the first deep fields.",
+    "author": "Sky Tonight",
+    "channel": "Sky Tonight",
+    "viewCount": 1123456,
+    "keywords": ["astronomy", "space", "science"],
+    "tags": ["jwst", "cosmology"]
+  },
+  {
+    "videoId": "tb15soccer",
+    "title": "Premier League Tactical Analysis — High Press Breakdown",
+    "shortDescription": "How mid-table sides are adapting to gegenpressing triggers.",
+    "author": "Tactics Board",
+    "channel": "Tactics Board",
+    "viewCount": 678234,
+    "keywords": ["football", "soccer", "sports"],
+    "tags": ["premier league", "analysis"]
+  },
+  {
+    "videoId": "tb16guitar",
+    "title": "Fingerstyle Acoustic — Travis Picking Patterns",
+    "shortDescription": "Thumb independence exercises and applying patterns to folk songs.",
+    "author": "Acoustic Shed",
+    "channel": "Acoustic Shed",
+    "viewCount": 998877,
+    "keywords": ["guitar", "fingerstyle", "lesson"],
+    "tags": ["music", "acoustic"]
+  },
+  {
+    "videoId": "tb17vegan",
+    "title": "High-Protein Vegan Meal Prep for a Week",
+    "shortDescription": "Lentils, tofu bowls, and batch roasting vegetables on Sunday.",
+    "author": "Plant Kitchen",
+    "channel": "Plant Kitchen",
+    "viewCount": 2100456,
+    "keywords": ["vegan", "meal prep", "healthy"],
+    "tags": ["cooking", "nutrition"]
+  },
+  {
+    "videoId": "tb18cybersec",
+    "title": "OWASP Top 10 — Explained for Developers",
+    "shortDescription": "Injection, SSRF, and practical mitigations in modern frameworks.",
+    "author": "Secure Code",
+    "channel": "Secure Code",
+    "viewCount": 1567012,
+    "keywords": ["security", "owasp", "web"],
+    "tags": ["coding", "infosec"]
+  },
+  {
+    "videoId": "tb19cycling",
+    "title": "Bike Packing Across the Alps — Gear and Routes",
+    "shortDescription": "Tire choice, battery lights, and gravel passes in Switzerland.",
+    "author": "Pedal Far",
+    "channel": "Pedal Far",
+    "viewCount": 423112,
+    "keywords": ["cycling", "travel", "outdoors"],
+    "tags": ["adventure", "bikes"]
+  },
+  {
+    "videoId": "tb20anime",
+    "title": "Spring Anime Season — Hidden Gems You Might Skip",
+    "shortDescription": "Slice of life and sci-fi picks with strong pacing and animation.",
+    "author": "Otaku Radar",
+    "channel": "Otaku Radar",
+    "viewCount": 789012,
+    "keywords": ["anime", "review", "japan"],
+    "tags": ["entertainment", "seasonal"]
+  }
+]

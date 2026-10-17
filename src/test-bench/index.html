@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Classifier test bench — ZoneMode</title>
+    <style>
+      :root {
+        font-family: system-ui, Segoe UI, Roboto, sans-serif;
+        --border: #ccc;
+        --bg: #f6f7f9;
+      }
+      body {
+        margin: 0;
+        padding: 1rem 1.25rem 2rem;
+        background: var(--bg);
+        color: #111;
+      }
+      h1 {
+        font-size: 1.25rem;
+        margin: 0 0 0.5rem;
+      }
+      .hint {
+        font-size: 0.85rem;
+        color: #444;
+        margin-bottom: 1rem;
+        max-width: 52rem;
+      }
+      fieldset.config {
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 0.75rem 1rem;
+        margin-bottom: 1rem;
+        background: #fff;
+      }
+      fieldset.config legend {
+        padding: 0 0.35rem;
+        font-weight: 600;
+      }
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem 1.25rem;
+        align-items: center;
+        margin: 0.35rem 0;
+      }
+      label.chk {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        cursor: pointer;
+      }
+      input[type="text"]#keywords {
+        width: min(100%, 36rem);
+        padding: 0.35rem 0.5rem;
+      }
+      button#reclassify {
+        padding: 0.45rem 1rem;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      .row-label {
+        font-weight: 600;
+        margin-right: 0.25rem;
+      }
+      button#loadYoutubeCache {
+        padding: 0.45rem 1rem;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      button#loadYoutubeCache:disabled {
+        opacity: 0.55;
+        cursor: not-allowed;
+      }
+      .placeholder-hint {
+        color: #444;
+      }
+      #configEcho {
+        font-family: ui-monospace, monospace;
+        font-size: 0.8rem;
+        white-space: pre-wrap;
+        background: #fff;
+        border: 1px dashed var(--border);
+        padding: 0.5rem 0.75rem;
+        border-radius: 6px;
+        margin-bottom: 0.75rem;
+      }
+      #summary {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem 1.5rem;
+        padding: 0.6rem 0;
+        font-size: 0.9rem;
+        border-bottom: 1px solid var(--border);
+        margin-bottom: 0.5rem;
+      }
+      table#results {
+        width: 100%;
+        border-collapse: collapse;
+        background: #fff;
+        font-size: 0.85rem;
+        table-layout: fixed;
+      }
+      #results th,
+      #results td {
+        border: 1px solid var(--border);
+        padding: 0.35rem 0.5rem;
+        vertical-align: top;
+        text-align: left;
+        word-wrap: break-word;
+      }
+      #results th {
+        background: #eef0f4;
+      }
+      .col-id {
+        width: 7rem;
+      }
+      .col-title {
+        width: 12%;
+      }
+      .col-author {
+        width: 10%;
+      }
+      .col-views {
+        width: 6.5rem;
+        text-align: right;
+      }
+      .col-keywords {
+        width: 12%;
+      }
+      .col-description {
+        width: 20%;
+      }
+      .col-classification {
+        min-width: 12rem;
+      }
+      #error {
+        color: #b00020;
+        margin: 0.5rem 0;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Classifier test bench</h1>
+    <p class="hint">
+      Open via <code>chrome-extension://</code> + extension ID +
+      <code>/test-bench/index.html</code> after loading unpacked <code>dist/</code>.
+      <strong>Reclassify</strong> runs shared <code>finalizeProfileVideoResult</code>
+      (<code>metadata_exact</code>: Innertube <code>basic_info.keywords</code> + optional
+      channel/author term vs profile keywords — same as production). One row per metadata
+      entry (bundled sample JSON or live cache from <code>/watch</code>). See
+      <code>docs/PRD-test-bench.md</code>.
+    </p>
+
+    <fieldset class="config">
+      <legend>Options</legend>
+      <div class="row">
+        <span class="row-label">Table rows:</span>
+        <label class="chk">
+          <input type="radio" name="dataSource" value="sample" checked />
+          Sample JSON (bundled)
+        </label>
+        <label class="chk">
+          <input type="radio" name="dataSource" value="youtube" />
+          YouTube tab metadata cache
+        </label>
+        <button type="button" id="loadYoutubeCache" disabled>
+          Load from YouTube tab
+        </button>
+      </div>
+      <div class="row">
+        <label>
+          Profile keywords / labels (comma-separated):
+          <input
+            type="text"
+            id="keywords"
+            placeholder="typescript, react, gaming, cooking, science"
+          />
+        </label>
+      </div>
+      <div class="row">
+        <button type="button" id="reclassify">Reclassify</button>
+      </div>
+    </fieldset>
+
+    <div id="error" hidden></div>
+    <div id="configEcho"></div>
+    <div id="summary"></div>
+    <table id="results">
+      <thead>
+        <tr>
+          <th class="col-id">Video id</th>
+          <th class="col-title">Video title</th>
+          <th class="col-author">Author</th>
+          <th class="col-views">View count</th>
+          <th class="col-keywords">Video keywords</th>
+          <th class="col-description">Video description</th>
+          <th class="col-classification">Classification result</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+
+    <script src="index.js"></script>
+  </body>
+</html>

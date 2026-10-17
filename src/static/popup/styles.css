@@ -1,0 +1,204 @@
+html {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --popup-width: 480px;
+  --popup-max-height: 680px;
+}
+
+body {
+  width: var(--popup-width);
+  margin: 0;
+  padding: 0;
+  max-height: var(--popup-max-height);
+  overflow: hidden;
+  background-color: #1a1b1e;
+  color: #f3f4f6;
+  box-sizing: border-box;
+}
+
+/**
+ * Single scroll container for the popup: avoids nested overflow/flex min-height quirks
+ * (e.g. wheel / trackpad stuck after editing a profile keywords textarea).
+ */
+#root {
+  max-height: var(--popup-max-height);
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+.popup-root {
+  display: flex;
+  flex-direction: column;
+}
+
+.popup-scroll-pane {
+  display: block;
+  overflow: visible;
+}
+
+/* Toolbar popup: explicit Close control (not just ×) */
+.settings-popup-close-button {
+  flex-shrink: 0;
+  background: #374151;
+  border: 1px solid #4b5563;
+  border-radius: 6px;
+  color: #f3f4f6;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 6px 14px;
+  line-height: 1.2;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.settings-popup-close-button:hover {
+  background: #4b5563;
+  border-color: #6b7280;
+  color: #fff;
+}
+
+.settings-popup-close-button:focus-visible {
+  outline: 2px solid #93c5fd;
+  outline-offset: 2px;
+}
+
+.settings-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.settings-popup-save-button {
+  flex-shrink: 0;
+  background: #065f46;
+  border: 1px solid #10b981;
+  border-radius: 6px;
+  color: #ecfdf5;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 6px 14px;
+  line-height: 1.2;
+  transition: background 0.15s ease, border-color 0.15s ease, opacity 0.15s ease;
+}
+
+.settings-popup-save-button:hover:not(:disabled) {
+  background: #047857;
+  border-color: #34d399;
+  color: #fff;
+}
+
+.settings-popup-save-button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.settings-popup-save-button:focus-visible {
+  outline: 2px solid #6ee7b7;
+  outline-offset: 2px;
+}
+
+.settings-sync-hint {
+  margin: 0;
+  padding: 10px 16px;
+  border-bottom: 1px solid #2c2d30;
+  font-size: 12px;
+  line-height: 1.45;
+  color: #9ca3af;
+}
+
+.settings-sync-hint strong {
+  color: #e5e7eb;
+}
+
+/** Sticky Save / Close, sync hint, and tab row — scroll stays in `#root` below this strip. */
+#root .settings-popup-shell .settings-popup-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 12;
+  background-color: #1a1b1e;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.35);
+  border-bottom: 1px solid #2c2d30;
+}
+
+#root .settings-popup-shell .settings-popup-sticky .settings-header {
+  border-bottom: none;
+}
+
+#root .settings-popup-shell .settings-popup-sticky .settings-sync-hint {
+  border-bottom: none;
+  padding-top: 0;
+}
+
+#root .settings-popup-shell .settings-popup-sticky .settings-tabs {
+  border-bottom: none;
+}
+
+#root .zonemode-container {
+  margin: 0;
+  max-height: none;
+  /* Main styles use overflow:hidden for watch-page card; don't trap wheel vs #root scroll. */
+  overflow: visible;
+  border-radius: 0;
+  border-left: none;
+  border-right: none;
+  box-shadow: none;
+}
+
+.popup-changelog {
+  padding: 12px 14px 16px;
+  border-top: 1px solid #2c2d30;
+  background: #141518;
+}
+
+.popup-changelog-title {
+  margin: 0 0 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #e5e7eb;
+}
+
+.popup-changelog-note {
+  margin: 0 0 12px;
+  font-size: 11px;
+  line-height: 1.4;
+  color: #6b7280;
+}
+
+.popup-changelog-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.popup-changelog-block {
+  margin: 0;
+}
+
+.popup-changelog-version {
+  margin: 0 0 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #fca5a5;
+}
+
+.popup-changelog-list {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 11px;
+  line-height: 1.45;
+  color: #9ca3af;
+}
+
+.popup-changelog-list li {
+  margin-bottom: 4px;
+}
+
+.popup-changelog-list li:last-child {
+  margin-bottom: 0;
+}

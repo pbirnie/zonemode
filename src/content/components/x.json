@@ -1,0 +1,1898 @@
+{
+    "video_id": "DNqsMXH6Eog",
+    "source": "youtubei.js getBasicInfo",
+    "basic_info": {
+      "id": "DNqsMXH6Eog",
+      "channel_id": "UCswG6FSbgZjbWtdf_hMLaow",
+      "title": "New Skills! /handoff, /prototype, /review and /writing-* | Skills Changelog",
+      "duration": 766,
+      "is_owner_viewing": false,
+      "short_description": "I've added two brand new skills to my arsenal: /handoff and /prototype. Both are awesome for working with AI agents during planning and prototyping phases.\n\n0:00 Intro\n0:12 /handoff\n3:49 /prototype\n6:39 Bug fixes and prompt improvements\n9:04 Writing skills in progress\n11:03 /review\n\nKeep up to date with my skills:\n\nhttps://aihero.dev/s/iDTI1S\n\nLearn more about the skills:\n\nhttps://aihero.dev/s/DVMypo\n\nFollow Matt on Twitter\n\nhttps://twitter.com/mattpocockuk\n\nJoin the Discord:\n\nhttps://aihero.dev/s/FUCbUs",
+      "thumbnail": [
+        {
+          "__type": "k",
+          "url": "https://i.ytimg.com/vi/DNqsMXH6Eog/maxresdefault.jpg",
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "__type": "k",
+          "url": "https://i.ytimg.com/vi/DNqsMXH6Eog/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC8Wyo7zlNhM5VfTNg4rqYr5PLaXQ",
+          "width": 336,
+          "height": 188
+        },
+        {
+          "__type": "k",
+          "url": "https://i.ytimg.com/vi/DNqsMXH6Eog/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDzjGBgQE6-c_AUy2qk4toRgZEylQ",
+          "width": 246,
+          "height": 138
+        },
+        {
+          "__type": "k",
+          "url": "https://i.ytimg.com/vi/DNqsMXH6Eog/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAMOjqDjKa2DYaV1aTcimaWjetBEg",
+          "width": 196,
+          "height": 110
+        },
+        {
+          "__type": "k",
+          "url": "https://i.ytimg.com/vi/DNqsMXH6Eog/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDfhHpw6EQxCqJHTFOumya5Mcqv1A",
+          "width": 168,
+          "height": 94
+        }
+      ],
+      "allow_ratings": true,
+      "view_count": 37220,
+      "author": "Matt Pocock",
+      "is_private": false,
+      "is_live": false,
+      "is_live_content": false,
+      "is_live_dvr_enabled": false,
+      "is_upcoming": false,
+      "is_crawlable": true,
+      "is_post_live_dvr": false,
+      "is_low_latency_live_stream": false,
+      "embed": {
+        "iframe_url": "https://www.youtube.com/embed/DNqsMXH6Eog",
+        "width": 1280,
+        "height": 720
+      },
+      "channel": {
+        "id": "UCswG6FSbgZjbWtdf_hMLaow",
+        "name": "Matt Pocock",
+        "url": "http://www.youtube.com/@mattpocockuk"
+      },
+      "is_unlisted": false,
+      "is_family_safe": true,
+      "category": "Science & Technology",
+      "has_ypc_metadata": false,
+      "start_timestamp": null,
+      "end_timestamp": null,
+      "url_canonical": null,
+      "tags": null
+    },
+    "playability_status": {
+      "status": "OK",
+      "reason": "",
+      "embeddable": true,
+      "audio_only_playability": null,
+      "error_screen": null
+    },
+    "player_config": {
+      "audio_config": {
+        "loudness_db": -2.0100002,
+        "perceptual_loudness_db": -16.01,
+        "enable_per_format_loudness": true
+      },
+      "stream_selection_config": {
+        "max_bitrate": "31530000"
+      },
+      "media_common_config": {
+        "dynamic_readahead_config": {
+          "max_read_ahead_media_time_ms": 120000,
+          "min_read_ahead_media_time_ms": 15000,
+          "read_ahead_growth_rate_ms": 1000
+        },
+        "media_ustreamer_request_config": {
+          "video_playback_ustreamer_config": "Css2Cr0FCAAlAACAPy0zM3M_NT0Klz9yGgoWbWZzMl9jbWZzX3dlYl92M18yXzAwMxgAoAEBqAEAuAIA2gKDARCw6gEYgN3bASCgnAEooJwBcIgngAH0A-ABA5gCDNACAugCBIADAogDiCeoAwPAAwHIAwGABAHQBAHYBAH4BAeABX3ABQHIBQHgBdAP6AUB-AXQD5AGAdAGAfAGAYAH0A_ABwGACAGICAGdCM3MTD6gCOgH4AgB6Aj___________8B-gJlLQAAoEI1AACqQqgB0IYDhQKamRk_jQIAAIA_lQL67Ws7tQIAAIA_wALfA_0CzczMPZADAZ0DCtcjPdUDAAB6RNUEAAAgQbUGvTeGNb0GMzODQMgHAeUHAIAJRPAHAYAIAbAI3wOoAwGwAwPQAwHYAwHKBBwKEwjAqQcQmHUY6AclAAAAACgAMAAQ4NQDGNAP0gQPCggIsAkQsAkgASCIJygB2gQNCgYI8C4Q8C4g8C4oAfAFAZgGAagGgIAC0gYUCOgHEGQaDQiIJxUAAAA_Hc3MTD_YBgHwBgG4BwGgCAHSCAYIARABGAGpCQAAAAAAAPC_sQkAAAAAAADwv9AJAdoJJC9NZmhyUFJXanhFZmZ2aG4ybzJFQUw5L1hGWXRKRGFPU1Q4buoLBIsGjAaADAGoDJAB4A0ByA8B0A8B6BABkBEBoBEBshEsQ0FNU0d4VWV1YmJKREFlVkFwd08tUlYyQkVOWkItRVdMUWJPN0E4RUJBPT3QEgHgEgGAEwGwEwHYEwDoEwGIFACRFAAAAAAAAPC_mRQAAAAAAADwv8oUEXYyMDI1MDkyMl8xMjI2LjAw2BSIJ-IUMAoAEixDQU1TR3hVZXViYkpEQWVWQXB3Ty1SVjJCRU5aQi1FV0xRYk83QThFQkE9PYEVAAAAAAAA8L-oFQGIp6HKCwEyDAirAhCxnr2cgbSUAzIMCK8CEN-TkpGWtJQDMgwIjwMQ-qmBzIm0lAMyDAiIARDg_6bAgLSUAzIMCPcBEJSgu_uNtJQDMgwIqgIQqev5kIC0lAMyDAiuAhDMx63_gbSUAzIMCI4DEJP9lfSCtJQDMgwIhwEQnsv5q4C0lAMyDAj0ARCF2Z7qjbSUAzIMCI0DELSw5qKAtJQDMgwIhgEQgrfRiYC0lAMyDAjzARCi6qznjbSUAzIMCIwDEM2zt5-AtJQDMgwIhQEQ5Iryp4C0lAMyDAjyARDr_ae8jrSUAzIMCIsDELGq0qKAtJQDMgwIoAEQnZLbp4C0lAMyDAiWAhC888CCj7SUAzIMCIoDEJfW046AtJQDMjwIjAEQ2NC7vMazlAMaLkNoUUtCV0ZqYjI1MEVndGtkV0ppWldRdFlYVjBid29LQ2dSc1lXNW5FZ0poY2cyPAiMARDHtMjaxrOUAxouQ2hRS0JXRmpiMjUwRWd0a2RXSmlaV1F0WVhWMGJ3b0tDZ1JzWVc1bkVnSmliZzJACIwBEKGd__nOs5QDGjJDaFFLQldGamIyNTBFZ3RrZFdKaVpXUXRZWFYwYndvTkNnUnNZVzVuRWdWa1pTMUVSUTJACIwBEIax2cfPs5QDGjJDaFFLQldGamIyNTBFZ3RrZFdKaVpXUXRZWFYwYndvTkNnUnNZVzVuRWdWbGN5MVZVdzJACIwBEJXP8bbPs5QDGjJDaFFLQldGamIyNTBFZ3RrZFdKaVpXUXRZWFYwYndvTkNnUnNZVzVuRWdWbWNpMUdVZzI8CIwBENSNsqnPs5QDGi5DaFFLQldGamIyNTBFZ3RrZFdKaVpXUXRZWFYwYndvS0NnUnNZVzVuRWdKb2FRMjwIjAEQqfPbwM-zlAMaLkNoUUtCV0ZqYjI1MEVndGtkV0ppWldRdFlYVjBid29LQ2dSc1lXNW5FZ0pwWkEyPAiMARCI3bq7z7OUAxouQ2hRS0JXRmpiMjUwRWd0a2RXSmlaV1F0WVhWMGJ3b0tDZ1JzWVc1bkVnSnBkQTI8CIwBEJmzjcDGs5QDGi5DaFFLQldGamIyNTBFZ3RrZFdKaVpXUXRZWFYwYndvS0NnUnNZVzVuRWdKcGR3MjwIjAEQw-PStc-zlAMaLkNoUUtCV0ZqYjI1MEVndGtkV0ppWldRdFlYVjBid29LQ2dSc1lXNW5FZ0pxWVEyPAiMARCGxKi-xrOUAxouQ2hRS0JXRmpiMjUwRWd0a2RXSmlaV1F0WVhWMGJ3b0tDZ1JzWVc1bkVnSnJidzI8CIwBELv4v9rGs5QDGi5DaFFLQldGamIyNTBFZ3RrZFdKaVpXUXRZWFYwYndvS0NnUnNZVzVuRWdKdGJBMkAIjAEQ3Liv08azlAMaMkNoUUtCV0ZqYjI1MEVndGtkV0ppWldRdFlYVjBid29OQ2dSc1lXNW5FZ1Z1YkMxT1RBMjwIjAEQx4SOyMazlAMaLkNoUUtCV0ZqYjI1MEVndGtkV0ppWldRdFlYVjBid29LQ2dSc1lXNW5FZ0p3WVEyPAiMARDmhIboxrOUAxouQ2hRS0JXRmpiMjUwRWd0a2RXSmlaV1F0WVhWMGJ3b0tDZ1JzWVc1bkVnSndiQTJACIwBEL_m-sDPs5QDGjJDaFFLQldGamIyNTBFZ3RrZFdKaVpXUXRZWFYwYndvTkNnUnNZVzVuRWdWd2RDMUNVZzI8CIwBEOOO4NPGs5QDGi5DaFFLQldGamIyNTBFZ3RrZFdKaVpXUXRZWFYwYndvS0NnUnNZVzVuRWdKeWRRMjwIjAEQpfKKyMazlAMaLkNoUUtCV0ZqYjI1MEVndGtkV0ppWldRdFlYVjBid29LQ2dSc1lXNW5FZ0owWVEyPAiMARD6-ILNxrOUAxouQ2hRS0JXRmpiMjUwRWd0a2RXSmlaV1F0WVhWMGJ3b0tDZ1JzWVc1bkVnSjBaUTI8CIwBEOftvNLGs5QDGi5DaFFLQldGamIyNTBFZ3RrZFdKaVpXUXRZWFYwYndvS0NnUnNZVzVuRWdKMWF3MkkIjAEQt6iR88uzlAMaO0NoRUtCV0ZqYjI1MEVnaHZjbWxuYVc1aGJBb0lDZ05rY21NU0FURUtEUW9FYkdGdVp4SUZaVzR0VlZNMjwIjAEQ1om16cqzlAMaLkNoRUtCV0ZqYjI1MEVnaHZjbWxuYVc1aGJBb05DZ1JzWVc1bkVnVmxiaTFWVXcySAiMARCNzJ7u17OUAxo6Q2hFS0JXRmpiMjUwRWdodmNtbG5hVzVoYkFvTkNnUnNZVzVuRWdWbGJpMVZVd29IQ2dKMlloSUJNUTI8CPkBEOmR7djHs5QDGi5DaFFLQldGamIyNTBFZ3RrZFdKaVpXUXRZWFYwYndvS0NnUnNZVzVuRWdKaGNnMjwI-QEQpqCl6cazlAMaLkNoUUtCV0ZqYjI1MEVndGtkV0ppWldRdFlYVjBid29LQ2dSc1lXNW5FZ0ppYmcyQAj5ARDBz7GTz7OUAxoyQ2hRS0JXRmpiMjUwRWd0a2RXSmlaV1F0WVhWMGJ3b05DZ1JzWVc1bkVnVmtaUzFFUlEyQAj5ARCbsYyG0LOUAxoyQ2hRS0JXRmpiMjUwRWd0a2RXSmlaV1F0WVhWMGJ3b05DZ1JzWVc1bkVnVmxjeTFWVXcyQAj5ARCXx9PIz7OUAxoyQ2hRS0JXRmpiMjUwRWd0a2RXSmlaV1F0WVhWMGJ3b05DZ1JzWVc1bkVnVm1jaTFHVWcyPAj5ARCqoa2fz7OUAxouQ2hRS0JXRmpiMjUwRWd0a2RXSmlaV1F0WVhWMGJ3b0tDZ1JzWVc1bkVnSm9hUTI8CPkBEMi7u8nPs5QDGi5DaFFLQldGamIyNTBFZ3RrZFdKaVpXUXRZWFYwYndvS0NnUnNZVzVuRWdKcFpBMjwI-QEQv7ybz9OzlAMaLkNoUUtCV0ZqYjI1MEVndGtkV0ppWldRdFlYVjBid29LQ2dSc1lXNW5FZ0pwZEEyPAj5ARDO0a7RxrOUAxouQ2hRS0JXRmpiMjUwRWd0a2RXSmlaV1F0WVhWMGJ3b0tDZ1JzWVc1bkVnSnBkdzI8CPkBEOKV-cHPs5QDGi5DaFFLQldGamIyNTBFZ3RrZFdKaVpXUXRZWFYwYndvS0NnUnNZVzVuRWdKcVlRMjwI-QEQq-r8xcazlAMaLkNoUUtCV0ZqYjI1MEVndGtkV0ppWldRdFlYVjBid29LQ2dSc1lXNW5FZ0pyYncyPAj5ARCPy_vvxrOUAxouQ2hRS0JXRmpiMjUwRWd0a2RXSmlaV1F0WVhWMGJ3b0tDZ1JzWVc1bkVnSnRiQTJACPkBEJa40c3Gs5QDGjJDaFFLQldGamIyNTBFZ3RrZFdKaVpXUXRZWFYwYndvTkNnUnNZVzVuRWdWdWJDMU9UQTI8CPkBEIS_qJzIs5QDGi5DaFFLQldGamIyNTBFZ3RrZFdKaVpXUXRZWFYwYndvS0NnUnNZVzVuRWdKd1lRMjwI-QEQpOG718azlAMaLkNoUUtCV0ZqYjI1MEVndGtkV0ppWldRdFlYVjBid29LQ2dSc1lXNW5FZ0p3YkEyQAj5ARDg8rGtz7OUAxoyQ2hRS0JXRmpiMjUwRWd0a2RXSmlaV1F0WVhWMGJ3b05DZ1JzWVc1bkVnVndkQzFDVWcyPAj5ARCZqJ-ayLOUAxouQ2hRS0JXRmpiMjUwRWd0a2RXSmlaV1F0WVhWMGJ3b0tDZ1JzWVc1bkVnSnlkUTI8CPkBEO3mjvvIs5QDGi5DaFFLQldGamIyNTBFZ3RrZFdKaVpXUXRZWFYwYndvS0NnUnNZVzVuRWdKMFlRMjwI-QEQrYnMy8ezlAMaLkNoUUtCV0ZqYjI1MEVndGtkV0ppWldRdFlYVjBid29LQ2dSc1lXNW5FZ0owWlEyPAj5ARD7yb_qxrOUAxouQ2hRS0JXRmpiMjUwRWd0a2RXSmlaV1F0WVhWMGJ3b0tDZ1JzWVc1bkVnSjFhdzJJCPkBEI7xs-3Ls5QDGjtDaEVLQldGamIyNTBFZ2h2Y21sbmFXNWhiQW9JQ2dOa2NtTVNBVEVLRFFvRWJHRnVaeElGWlc0dFZWTTI8CPkBEO_iwIjLs5QDGi5DaEVLQldGamIyNTBFZ2h2Y21sbmFXNWhiQW9OQ2dSc1lXNW5FZ1ZsYmkxVlV3MkgI-QEQk_rm8tezlAMaOkNoRUtCV0ZqYjI1MEVnaHZjbWxuYVc1aGJBb05DZ1JzWVc1bkVnVmxiaTFWVXdvSENnSjJZaElCTVEyPAj6ARC1zILZx7OUAxouQ2hRS0JXRmpiMjUwRWd0a2RXSmlaV1F0WVhWMGJ3b0tDZ1JzWVc1bkVnSmhjZzI8CPoBEKHBuenGs5QDGi5DaFFLQldGamIyNTBFZ3RrZFdKaVpXUXRZWFYwYndvS0NnUnNZVzVuRWdKaWJnMkAI-gEQrbqvk8-zlAMaMkNoUUtCV0ZqYjI1MEVndGtkV0ppWldRdFlYVjBid29OQ2dSc1lXNW5FZ1ZrWlMxRVJRMkAI-gEQr-L-hdCzlAMaMkNoUUtCV0ZqYjI1MEVndGtkV0ppWldRdFlYVjBid29OQ2dSc1lXNW5FZ1ZsY3kxVlV3MkAI-gEQqJDYyM-zlAMaMkNoUUtCV0ZqYjI1MEVndGtkV0ppWldRdFlYVjBid29OQ2dSc1lXNW5FZ1ZtY2kxR1VnMjwI-gEQ09evn8-zlAMaLkNoUUtCV0ZqYjI1MEVndGtkV0ppWldRdFlYVjBid29LQ2dSc1lXNW5FZ0pvYVEyPAj6ARDT7cjJz7OUAxouQ2hRS0JXRmpiMjUwRWd0a2RXSmlaV1F0WVhWMGJ3b0tDZ1JzWVc1bkVnSnBaQTI8CPoBEN2xqc_Ts5QDGi5DaFFLQldGamIyNTBFZ3RrZFdKaVpXUXRZWFYwYndvS0NnUnNZVzVuRWdKcGRBMjwI-gEQkb-l0sazlAMaLkNoUUtCV0ZqYjI1MEVndGtkV0ppWldRdFlYVjBid29LQ2dSc1lXNW5FZ0pwZHcyPAj6ARCxl_jBz7OUAxouQ2hRS0JXRmpiMjUwRWd0a2RXSmlaV1F0WVhWMGJ3b0tDZ1JzWVc1bkVnSnFZUTI8CPoBEPLm7MXGs5QDGi5DaFFLQldGamIyNTBFZ3RrZFdKaVpXUXRZWFYwYndvS0NnUnNZVzVuRWdKcmJ3MjwI-gEQsq-A68azlAMaLkNoUUtCV0ZqYjI1MEVndGtkV0ppWldRdFlYVjBid29LQ2dSc1lXNW5FZ0p0YkEyQAj6ARDqwdjNxrOUAxoyQ2hRS0JXRmpiMjUwRWd0a2RXSmlaV1F0WVhWMGJ3b05DZ1JzWVc1bkVnVnViQzFPVEEyPAj6ARDLlLecyLOUAxouQ2hRS0JXRmpiMjUwRWd0a2RXSmlaV1F0WVhWMGJ3b0tDZ1JzWVc1bkVnSndZUTI8CPoBEM76k9bGs5QDGi5DaFFLQldGamIyNTBFZ3RrZFdKaVpXUXRZWFYwYndvS0NnUnNZVzVuRWdKd2JBMkAI-gEQwu6Prc-zlAMaMkNoUUtCV0ZqYjI1MEVndGtkV0ppWldRdFlYVjBid29OQ2dSc1lXNW5FZ1Z3ZEMxQ1VnMjwI-gEQ3KPqmcizlAMaLkNoUUtCV0ZqYjI1MEVndGtkV0ppWldRdFlYVjBid29LQ2dSc1lXNW5FZ0p5ZFEyPAj6ARCv8fj6yLOUAxouQ2hRS0JXRmpiMjUwRWd0a2RXSmlaV1F0WVhWMGJ3b0tDZ1JzWVc1bkVnSjBZUTI8CPoBEK-F1cvHs5QDGi5DaFFLQldGamIyNTBFZ3RrZFdKaVpXUXRZWFYwYndvS0NnUnNZVzVuRWdKMFpRMjwI-gEQ3ZLW6cazlAMaLkNoUUtCV0ZqYjI1MEVndGtkV0ppWldRdFlYVjBid29LQ2dSc1lXNW5FZ0oxYXcySQj6ARCj-43uy7OUAxo7Q2hFS0JXRmpiMjUwRWdodmNtbG5hVzVoYkFvSUNnTmtjbU1TQVRFS0RRb0ViR0Z1WnhJRlpXNHRWVk0yPAj6ARC3y6-Iy7OUAxouQ2hFS0JXRmpiMjUwRWdodmNtbG5hVzVoYkFvTkNnUnNZVzVuRWdWbGJpMVZVdzJICPoBEI6VtfLXs5QDGjpDaEVLQldGamIyNTBFZ2h2Y21sbmFXNWhiQW9OQ2dSc1lXNW5FZ1ZsYmkxVlV3b0hDZ0oyWWhJQk1RMjwI-wEQ-Pj62MezlAMaLkNoUUtCV0ZqYjI1MEVndGtkV0ppWldRdFlYVjBid29LQ2dSc1lXNW5FZ0poY2cyPAj7ARDDnLTpxrOUAxouQ2hRS0JXRmpiMjUwRWd0a2RXSmlaV1F0WVhWMGJ3b0tDZ1JzWVc1bkVnSmliZzJACPsBENXfr5PPs5QDGjJDaFFLQldGamIyNTBFZ3RrZFdKaVpXUXRZWFYwYndvTkNnUnNZVzVuRWdWa1pTMUVSUTJACPsBEIOL-YXQs5QDGjJDaFFLQldGamIyNTBFZ3RrZFdKaVpXUXRZWFYwYndvTkNnUnNZVzVuRWdWbGN5MVZVdzJACPsBELSF6sjPs5QDGjJDaFFLQldGamIyNTBFZ3RrZFdKaVpXUXRZWFYwYndvTkNnUnNZVzVuRWdWbWNpMUdVZzI8CPsBEOnHzJ_Ps5QDGi5DaFFLQldGamIyNTBFZ3RrZFdKaVpXUXRZWFYwYndvS0NnUnNZVzVuRWdKb2FRMjwI-wEQ1I_Wyc-zlAMaLkNoUUtCV0ZqYjI1MEVndGtkV0ppWldRdFlYVjBid29LQ2dSc1lXNW5FZ0pwWkEyPAj7ARDbo6XP07OUAxouQ2hRS0JXRmpiMjUwRWd0a2RXSmlaV1F0WVhWMGJ3b0tDZ1JzWVc1bkVnSnBkQTI8CPsBEOKsrdHGs5QDGi5DaFFLQldGamIyNTBFZ3RrZFdKaVpXUXRZWFYwYndvS0NnUnNZVzVuRWdKcGR3MjwI-wEQpL_ywc-zlAMaLkNoUUtCV0ZqYjI1MEVndGtkV0ppWldRdFlYVjBid29LQ2dSc1lXNW5FZ0pxWVEyPAj7ARCYw73FxrOUAxouQ2hRS0JXRmpiMjUwRWd0a2RXSmlaV1F0WVhWMGJ3b0tDZ1JzWVc1bkVnSnJidzI8CPsBEJX-nOvGs5QDGi5DaFFLQldGamIyNTBFZ3RrZFdKaVpXUXRZWFYwYndvS0NnUnNZVzVuRWdKdGJBMkAI-wEQ677yzcazlAMaMkNoUUtCV0ZqYjI1MEVndGtkV0ppWldRdFlYVjBid29OQ2dSc1lXNW5FZ1Z1YkMxT1RBMjwI-wEQp62VnMizlAMaLkNoUUtCV0ZqYjI1MEVndGtkV0ppWldRdFlYVjBid29LQ2dSc1lXNW5FZ0p3WVEyPAj7ARDu9rDWxrOUAxouQ2hRS0JXRmpiMjUwRWd0a2RXSmlaV1F0WVhWMGJ3b0tDZ1JzWVc1bkVnSndiQTJACPsBENuOs63Ps5QDGjJDaFFLQldGamIyNTBFZ3RrZFdKaVpXUXRZWFYwYndvTkNnUnNZVzVuRWdWd2RDMUNVZzI8CPsBEN2K65nIs5QDGi5DaFFLQldGamIyNTBFZ3RrZFdKaVpXUXRZWFYwYndvS0NnUnNZVzVuRWdKeWRRMjwI-wEQ0-iT-8izlAMaLkNoUUtCV0ZqYjI1MEVndGtkV0ppWldRdFlYVjBid29LQ2dSc1lXNW5FZ0owWVEyPAj7ARDz38nLx7OUAxouQ2hRS0JXRmpiMjUwRWd0a2RXSmlaV1F0WVhWMGJ3b0tDZ1JzWVc1bkVnSjBaUTI8CPsBEJLZ6enGs5QDGi5DaFFLQldGamIyNTBFZ3RrZFdKaVpXUXRZWFYwYndvS0NnUnNZVzVuRWdKMWF3MkkI-wEQhIez7cuzlAMaO0NoRUtCV0ZqYjI1MEVnaHZjbWxuYVc1aGJBb0lDZ05rY21NU0FURUtEUW9FYkdGdVp4SUZaVzR0VlZNMjwI-wEQvI2Oi8uzlAMaLkNoRUtCV0ZqYjI1MEVnaHZjbWxuYVc1aGJBb05DZ1JzWVc1bkVnVmxiaTFWVXcySAj7ARCsqtDy17OUAxo6Q2hFS0JXRmpiMjUwRWdodmNtbG5hVzVoYkFvTkNnUnNZVzVuRWdWbGJpMVZVd29IQ2dKMlloSUJNUToAUi8aAmVuKAAyGFVDc3dHNkZTYmdaamJXdGRmX2hNTGFvdzgAQABYAGABaAB4AIABAKABAbABBboBAwQFMcIBCAECAwQFCCowygEkChsKF2V1SUVhckN3Q0pQWXhOOFBqOHJWeUE4EAESBQiIJxAC0AEAgAIAEkwAIGYOyDBFAiAh99auNOKYNUa2ZZBX2xXWXBhfPi1atAoj7cF6eQYvEQIhALuKfoB1p7E4N4CbWJj9mZ3W-dghDRwBhUxzRMjf4oiMGgJlaQ=="
+        }
+      }
+    },
+    "captions": {
+      "__type": "Oz",
+      "type": "PlayerCaptionsTracklist",
+      "caption_tracks": [
+        {
+          "base_url": "https://www.youtube.com/api/timedtext?v=DNqsMXH6Eog&ei=euIEarCwCJPYxN8Pj8rVyA8&caps=asr&opi=112496729&exp=xpe&xoaf=5&xowf=1&xospf=1&hl=en-GB&ip=0.0.0.0&ipbits=0&expire=1778730218&sparams=ip,ipbits,expire,v,ei,caps,opi,exp,xoaf&signature=7E8426617C7EF4C552E9146B0C8A8D11CCCCB5AF.B45EF24CDAB661F155BF7556E1FBD019E99EF1EF&key=yt8&kind=asr&lang=en",
+          "name": {
+            "__type": "D",
+            "text": "English (auto-generated)",
+            "rtl": false
+          },
+          "vss_id": "a.en",
+          "language_code": "en",
+          "kind": "asr",
+          "is_translatable": true
+        }
+      ],
+      "audio_tracks": [
+        {
+          "audio_track_id": "bn.10",
+          "caption_track_indices": [
+            0
+          ]
+        },
+        {
+          "audio_track_id": "ta.10",
+          "caption_track_indices": [
+            0
+          ]
+        },
+        {
+          "audio_track_id": "de-DE.10",
+          "caption_track_indices": [
+            0
+          ]
+        },
+        {
+          "audio_track_id": "fr-FR.10",
+          "caption_track_indices": [
+            0
+          ]
+        },
+        {
+          "audio_track_id": "id.10",
+          "caption_track_indices": [
+            0
+          ]
+        },
+        {
+          "audio_track_id": "hi.10",
+          "caption_track_indices": [
+            0
+          ]
+        },
+        {
+          "audio_track_id": "iw.10",
+          "caption_track_indices": [
+            0
+          ]
+        },
+        {
+          "audio_track_id": "ko.10",
+          "caption_track_indices": [
+            0
+          ]
+        },
+        {
+          "audio_track_id": "ml.10",
+          "caption_track_indices": [
+            0
+          ]
+        },
+        {
+          "audio_track_id": "pa.10",
+          "caption_track_indices": [
+            0
+          ]
+        },
+        {
+          "audio_track_id": "ja.10",
+          "caption_track_indices": [
+            0
+          ]
+        },
+        {
+          "audio_track_id": "it.10",
+          "caption_track_indices": [
+            0
+          ]
+        },
+        {
+          "audio_track_id": "pt-BR.10",
+          "caption_track_indices": [
+            0
+          ]
+        },
+        {
+          "audio_track_id": "es-US.10",
+          "caption_track_indices": [
+            0
+          ]
+        },
+        {
+          "audio_track_id": "ar.10",
+          "caption_track_indices": [
+            0
+          ]
+        },
+        {
+          "audio_track_id": "te.10",
+          "caption_track_indices": [
+            0
+          ]
+        },
+        {
+          "audio_track_id": "ru.10",
+          "caption_track_indices": [
+            0
+          ]
+        },
+        {
+          "audio_track_id": "uk.10",
+          "caption_track_indices": [
+            0
+          ]
+        },
+        {
+          "audio_track_id": "nl-NL.10",
+          "caption_track_indices": [
+            0
+          ]
+        },
+        {
+          "audio_track_id": "en-US.4",
+          "caption_track_indices": [
+            0
+          ]
+        },
+        {
+          "audio_track_id": "pl.10",
+          "caption_track_indices": [
+            0
+          ]
+        }
+      ],
+      "default_audio_track_index": 19,
+      "translation_languages": [
+        {
+          "language_code": "ab",
+          "language_name": {
+            "__type": "D",
+            "text": "Abkhazian",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "aa",
+          "language_name": {
+            "__type": "D",
+            "text": "Afar",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "af",
+          "language_name": {
+            "__type": "D",
+            "text": "Afrikaans",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "ak",
+          "language_name": {
+            "__type": "D",
+            "text": "Akan",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "sq",
+          "language_name": {
+            "__type": "D",
+            "text": "Albanian",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "am",
+          "language_name": {
+            "__type": "D",
+            "text": "Amharic",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "ar",
+          "language_name": {
+            "__type": "D",
+            "text": "Arabic",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "hy",
+          "language_name": {
+            "__type": "D",
+            "text": "Armenian",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "as",
+          "language_name": {
+            "__type": "D",
+            "text": "Assamese",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "ay",
+          "language_name": {
+            "__type": "D",
+            "text": "Aymara",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "az",
+          "language_name": {
+            "__type": "D",
+            "text": "Azerbaijani",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "bn",
+          "language_name": {
+            "__type": "D",
+            "text": "Bangla",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "ba",
+          "language_name": {
+            "__type": "D",
+            "text": "Bashkir",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "eu",
+          "language_name": {
+            "__type": "D",
+            "text": "Basque",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "be",
+          "language_name": {
+            "__type": "D",
+            "text": "Belarusian",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "bho",
+          "language_name": {
+            "__type": "D",
+            "text": "Bhojpuri",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "bs",
+          "language_name": {
+            "__type": "D",
+            "text": "Bosnian",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "br",
+          "language_name": {
+            "__type": "D",
+            "text": "Breton",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "bg",
+          "language_name": {
+            "__type": "D",
+            "text": "Bulgarian",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "my",
+          "language_name": {
+            "__type": "D",
+            "text": "Burmese",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "ca",
+          "language_name": {
+            "__type": "D",
+            "text": "Catalan",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "ceb",
+          "language_name": {
+            "__type": "D",
+            "text": "Cebuano",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "zh-Hans",
+          "language_name": {
+            "__type": "D",
+            "text": "Chinese (Simplified)",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "zh-Hant",
+          "language_name": {
+            "__type": "D",
+            "text": "Chinese (Traditional)",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "co",
+          "language_name": {
+            "__type": "D",
+            "text": "Corsican",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "hr",
+          "language_name": {
+            "__type": "D",
+            "text": "Croatian",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "cs",
+          "language_name": {
+            "__type": "D",
+            "text": "Czech",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "da",
+          "language_name": {
+            "__type": "D",
+            "text": "Danish",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "dv",
+          "language_name": {
+            "__type": "D",
+            "text": "Divehi",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "nl",
+          "language_name": {
+            "__type": "D",
+            "text": "Dutch",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "dz",
+          "language_name": {
+            "__type": "D",
+            "text": "Dzongkha",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "en",
+          "language_name": {
+            "__type": "D",
+            "text": "English",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "eo",
+          "language_name": {
+            "__type": "D",
+            "text": "Esperanto",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "et",
+          "language_name": {
+            "__type": "D",
+            "text": "Estonian",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "ee",
+          "language_name": {
+            "__type": "D",
+            "text": "Ewe",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "fo",
+          "language_name": {
+            "__type": "D",
+            "text": "Faroese",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "fj",
+          "language_name": {
+            "__type": "D",
+            "text": "Fijian",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "fil",
+          "language_name": {
+            "__type": "D",
+            "text": "Filipino",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "fi",
+          "language_name": {
+            "__type": "D",
+            "text": "Finnish",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "fr",
+          "language_name": {
+            "__type": "D",
+            "text": "French",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "gaa",
+          "language_name": {
+            "__type": "D",
+            "text": "Ga",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "gl",
+          "language_name": {
+            "__type": "D",
+            "text": "Galician",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "lg",
+          "language_name": {
+            "__type": "D",
+            "text": "Ganda",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "ka",
+          "language_name": {
+            "__type": "D",
+            "text": "Georgian",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "de",
+          "language_name": {
+            "__type": "D",
+            "text": "German",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "el",
+          "language_name": {
+            "__type": "D",
+            "text": "Greek",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "gn",
+          "language_name": {
+            "__type": "D",
+            "text": "Guarani",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "gu",
+          "language_name": {
+            "__type": "D",
+            "text": "Gujarati",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "ht",
+          "language_name": {
+            "__type": "D",
+            "text": "Haitian Creole",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "ha",
+          "language_name": {
+            "__type": "D",
+            "text": "Hausa",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "haw",
+          "language_name": {
+            "__type": "D",
+            "text": "Hawaiian",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "iw",
+          "language_name": {
+            "__type": "D",
+            "text": "Hebrew",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "hi",
+          "language_name": {
+            "__type": "D",
+            "text": "Hindi",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "hmn",
+          "language_name": {
+            "__type": "D",
+            "text": "Hmong",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "hu",
+          "language_name": {
+            "__type": "D",
+            "text": "Hungarian",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "is",
+          "language_name": {
+            "__type": "D",
+            "text": "Icelandic",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "ig",
+          "language_name": {
+            "__type": "D",
+            "text": "Igbo",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "id",
+          "language_name": {
+            "__type": "D",
+            "text": "Indonesian",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "iu",
+          "language_name": {
+            "__type": "D",
+            "text": "Inuktitut",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "ga",
+          "language_name": {
+            "__type": "D",
+            "text": "Irish",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "it",
+          "language_name": {
+            "__type": "D",
+            "text": "Italian",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "ja",
+          "language_name": {
+            "__type": "D",
+            "text": "Japanese",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "jv",
+          "language_name": {
+            "__type": "D",
+            "text": "Javanese",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "kl",
+          "language_name": {
+            "__type": "D",
+            "text": "Kalaallisut",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "kn",
+          "language_name": {
+            "__type": "D",
+            "text": "Kannada",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "kk",
+          "language_name": {
+            "__type": "D",
+            "text": "Kazakh",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "kha",
+          "language_name": {
+            "__type": "D",
+            "text": "Khasi",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "km",
+          "language_name": {
+            "__type": "D",
+            "text": "Khmer",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "rw",
+          "language_name": {
+            "__type": "D",
+            "text": "Kinyarwanda",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "ko",
+          "language_name": {
+            "__type": "D",
+            "text": "Korean",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "kri",
+          "language_name": {
+            "__type": "D",
+            "text": "Krio",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "ku",
+          "language_name": {
+            "__type": "D",
+            "text": "Kurdish",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "ky",
+          "language_name": {
+            "__type": "D",
+            "text": "Kyrgyz",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "lo",
+          "language_name": {
+            "__type": "D",
+            "text": "Lao",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "la",
+          "language_name": {
+            "__type": "D",
+            "text": "Latin",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "lv",
+          "language_name": {
+            "__type": "D",
+            "text": "Latvian",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "ln",
+          "language_name": {
+            "__type": "D",
+            "text": "Lingala",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "lt",
+          "language_name": {
+            "__type": "D",
+            "text": "Lithuanian",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "lua",
+          "language_name": {
+            "__type": "D",
+            "text": "Luba-Lulua",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "luo",
+          "language_name": {
+            "__type": "D",
+            "text": "Luo",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "lb",
+          "language_name": {
+            "__type": "D",
+            "text": "Luxembourgish",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "mk",
+          "language_name": {
+            "__type": "D",
+            "text": "Macedonian",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "mg",
+          "language_name": {
+            "__type": "D",
+            "text": "Malagasy",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "ms",
+          "language_name": {
+            "__type": "D",
+            "text": "Malay",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "ml",
+          "language_name": {
+            "__type": "D",
+            "text": "Malayalam",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "mt",
+          "language_name": {
+            "__type": "D",
+            "text": "Maltese",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "gv",
+          "language_name": {
+            "__type": "D",
+            "text": "Manx",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "mi",
+          "language_name": {
+            "__type": "D",
+            "text": "Māori",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "mr",
+          "language_name": {
+            "__type": "D",
+            "text": "Marathi",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "mn",
+          "language_name": {
+            "__type": "D",
+            "text": "Mongolian",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "mfe",
+          "language_name": {
+            "__type": "D",
+            "text": "Morisyen",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "ne",
+          "language_name": {
+            "__type": "D",
+            "text": "Nepali",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "new",
+          "language_name": {
+            "__type": "D",
+            "text": "Newari",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "nso",
+          "language_name": {
+            "__type": "D",
+            "text": "Northern Sotho",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "no",
+          "language_name": {
+            "__type": "D",
+            "text": "Norwegian",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "ny",
+          "language_name": {
+            "__type": "D",
+            "text": "Nyanja",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "oc",
+          "language_name": {
+            "__type": "D",
+            "text": "Occitan",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "or",
+          "language_name": {
+            "__type": "D",
+            "text": "Odia",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "om",
+          "language_name": {
+            "__type": "D",
+            "text": "Oromo",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "os",
+          "language_name": {
+            "__type": "D",
+            "text": "Ossetic",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "pam",
+          "language_name": {
+            "__type": "D",
+            "text": "Pampanga",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "ps",
+          "language_name": {
+            "__type": "D",
+            "text": "Pashto",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "fa",
+          "language_name": {
+            "__type": "D",
+            "text": "Persian",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "pl",
+          "language_name": {
+            "__type": "D",
+            "text": "Polish",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "pt",
+          "language_name": {
+            "__type": "D",
+            "text": "Portuguese",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "pt-PT",
+          "language_name": {
+            "__type": "D",
+            "text": "Portuguese (Portugal)",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "pa",
+          "language_name": {
+            "__type": "D",
+            "text": "Punjabi",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "qu",
+          "language_name": {
+            "__type": "D",
+            "text": "Quechua",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "ro",
+          "language_name": {
+            "__type": "D",
+            "text": "Romanian",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "rn",
+          "language_name": {
+            "__type": "D",
+            "text": "Rundi",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "ru",
+          "language_name": {
+            "__type": "D",
+            "text": "Russian",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "sm",
+          "language_name": {
+            "__type": "D",
+            "text": "Samoan",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "sg",
+          "language_name": {
+            "__type": "D",
+            "text": "Sango",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "sa",
+          "language_name": {
+            "__type": "D",
+            "text": "Sanskrit",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "gd",
+          "language_name": {
+            "__type": "D",
+            "text": "Scottish Gaelic",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "sr",
+          "language_name": {
+            "__type": "D",
+            "text": "Serbian",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "crs",
+          "language_name": {
+            "__type": "D",
+            "text": "Seselwa Creole French",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "sn",
+          "language_name": {
+            "__type": "D",
+            "text": "Shona",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "sd",
+          "language_name": {
+            "__type": "D",
+            "text": "Sindhi",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "si",
+          "language_name": {
+            "__type": "D",
+            "text": "Sinhala",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "sk",
+          "language_name": {
+            "__type": "D",
+            "text": "Slovak",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "sl",
+          "language_name": {
+            "__type": "D",
+            "text": "Slovenian",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "so",
+          "language_name": {
+            "__type": "D",
+            "text": "Somali",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "st",
+          "language_name": {
+            "__type": "D",
+            "text": "Southern Sotho",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "es",
+          "language_name": {
+            "__type": "D",
+            "text": "Spanish",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "su",
+          "language_name": {
+            "__type": "D",
+            "text": "Sundanese",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "sw",
+          "language_name": {
+            "__type": "D",
+            "text": "Swahili",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "ss",
+          "language_name": {
+            "__type": "D",
+            "text": "Swati",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "sv",
+          "language_name": {
+            "__type": "D",
+            "text": "Swedish",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "tg",
+          "language_name": {
+            "__type": "D",
+            "text": "Tajik",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "ta",
+          "language_name": {
+            "__type": "D",
+            "text": "Tamil",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "tt",
+          "language_name": {
+            "__type": "D",
+            "text": "Tatar",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "te",
+          "language_name": {
+            "__type": "D",
+            "text": "Telugu",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "th",
+          "language_name": {
+            "__type": "D",
+            "text": "Thai",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "bo",
+          "language_name": {
+            "__type": "D",
+            "text": "Tibetan",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "ti",
+          "language_name": {
+            "__type": "D",
+            "text": "Tigrinya",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "to",
+          "language_name": {
+            "__type": "D",
+            "text": "Tongan",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "ts",
+          "language_name": {
+            "__type": "D",
+            "text": "Tsonga",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "tn",
+          "language_name": {
+            "__type": "D",
+            "text": "Tswana",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "tum",
+          "language_name": {
+            "__type": "D",
+            "text": "Tumbuka",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "tr",
+          "language_name": {
+            "__type": "D",
+            "text": "Turkish",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "tk",
+          "language_name": {
+            "__type": "D",
+            "text": "Turkmen",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "uk",
+          "language_name": {
+            "__type": "D",
+            "text": "Ukrainian",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "ur",
+          "language_name": {
+            "__type": "D",
+            "text": "Urdu",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "ug",
+          "language_name": {
+            "__type": "D",
+            "text": "Uyghur",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "uz",
+          "language_name": {
+            "__type": "D",
+            "text": "Uzbek",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "ve",
+          "language_name": {
+            "__type": "D",
+            "text": "Venda",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "vi",
+          "language_name": {
+            "__type": "D",
+            "text": "Vietnamese",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "war",
+          "language_name": {
+            "__type": "D",
+            "text": "Waray",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "cy",
+          "language_name": {
+            "__type": "D",
+            "text": "Welsh",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "fy",
+          "language_name": {
+            "__type": "D",
+            "text": "Western Frisian",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "wo",
+          "language_name": {
+            "__type": "D",
+            "text": "Wolof",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "xh",
+          "language_name": {
+            "__type": "D",
+            "text": "Xhosa",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "yi",
+          "language_name": {
+            "__type": "D",
+            "text": "Yiddish",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "yo",
+          "language_name": {
+            "__type": "D",
+            "text": "Yoruba",
+            "rtl": false
+          }
+        },
+        {
+          "language_code": "zu",
+          "language_name": {
+            "__type": "D",
+            "text": "Zulu",
+            "rtl": false
+          }
+        }
+      ]
+    },
+    "storyboards": {
+      "__type": "I9",
+      "type": "PlayerStoryboardSpec",
+      "boards": [
+        {
+          "type": "vod",
+          "template_url": "https://i.ytimg.com/sb/DNqsMXH6Eog/storyboard3_L0/default.jpg?sqp=-oaymwENSDfyq4qpAwVwAcABBqLzl_8DBgiG0ovQBg%3D%3D&sigh=rs%24AOn4CLA1PhuympnludVx7aBM0fxw2mmYDA",
+          "thumbnail_width": 48,
+          "thumbnail_height": 27,
+          "thumbnail_count": 100,
+          "interval": 0,
+          "columns": 10,
+          "rows": 10,
+          "storyboard_count": 1
+        },
+        {
+          "type": "vod",
+          "template_url": "https://i.ytimg.com/sb/DNqsMXH6Eog/storyboard3_L1/M$M.jpg?sqp=-oaymwENSDfyq4qpAwVwAcABBqLzl_8DBgiG0ovQBg%3D%3D&sigh=rs%24AOn4CLD9rxJk93nejTjVmyRaxQT9OgCmeQ",
+          "thumbnail_width": 80,
+          "thumbnail_height": 45,
+          "thumbnail_count": 155,
+          "interval": 5000,
+          "columns": 10,
+          "rows": 10,
+          "storyboard_count": 2
+        },
+        {
+          "type": "vod",
+          "template_url": "https://i.ytimg.com/sb/DNqsMXH6Eog/storyboard3_L2/M$M.jpg?sqp=-oaymwENSDfyq4qpAwVwAcABBqLzl_8DBgiG0ovQBg%3D%3D&sigh=rs%24AOn4CLARJsZg3VbuWmiJqkNR9ppY4o-kdw",
+          "thumbnail_width": 160,
+          "thumbnail_height": 90,
+          "thumbnail_count": 155,
+          "interval": 5000,
+          "columns": 5,
+          "rows": 5,
+          "storyboard_count": 7
+        },
+        {
+          "type": "vod",
+          "template_url": "https://i.ytimg.com/sb/DNqsMXH6Eog/storyboard3_L3/M$M.jpg?sqp=-oaymwENSDfyq4qpAwVwAcABBqLzl_8DBgiG0ovQBg%3D%3D&sigh=rs%24AOn4CLDwM6UDj9WWHQVrwUo5HFBgYGNPcw",
+          "thumbnail_width": 320,
+          "thumbnail_height": 180,
+          "thumbnail_count": 155,
+          "interval": 5000,
+          "columns": 3,
+          "rows": 3,
+          "storyboard_count": 18
+        }
+      ]
+    },
+    "cards": {
+      "__type": "FX",
+      "type": "CardCollection",
+      "cards": [
+        {
+          "__type": "TV",
+          "type": "Card",
+          "teaser": {
+            "__type": "yD",
+            "type": "SimpleCardTeaser",
+            "message": {
+              "__type": "D",
+              "text": "View corrections",
+              "rtl": false
+            },
+            "prominent": true
+          },
+          "content": null,
+          "cue_ranges": [
+            {
+              "start_card_active_ms": "0",
+              "end_card_active_ms": "5000",
+              "teaser_duration_ms": "6000",
+              "icon_after_teaser_ms": "5000"
+            }
+          ]
+        }
+      ],
+      "header": {
+        "__type": "D",
+        "text": "From Matt Pocock",
+        "rtl": false
+      },
+      "allow_teaser_dismiss": true
+    },
+    "page": [
+      {
+        "microformat": {
+          "__type": "C8",
+          "type": "PlayerMicroformat",
+          "title": {
+            "__type": "D",
+            "text": "New Skills! /handoff, /prototype, /review and /writing-* | Skills Changelog",
+            "rtl": false
+          },
+          "description": {
+            "__type": "D",
+            "text": "I've added two brand new skills to my arsenal: /handoff and /prototype. Both are awesome for working with AI agents during planning and prototyping phases.\n\n0:00 Intro\n0:12 /handoff\n3:49 /prototype\n6:39 Bug fixes and prompt improvements\n9:04 Writing skills in progress\n11:03 /review\n\nKeep up to date with my skills:\n\nhttps://aihero.dev/s/iDTI1S\n\nLearn more about the skills:\n\nhttps://aihero.dev/s/DVMypo\n\nFollow Matt on Twitter\n\nhttps://twitter.com/mattpocockuk\n\nJoin the Discord:\n\nhttps://aihero.dev/s/FUCbUs",
+            "rtl": false
+          },
+          "thumbnails": [
+            {
+              "__type": "k",
+              "url": "https://i.ytimg.com/vi/DNqsMXH6Eog/maxresdefault.jpg",
+              "width": 1280,
+              "height": 720
+            }
+          ],
+          "embed": "[Circular]",
+          "length_seconds": 766,
+          "channel": "[Circular]",
+          "is_family_safe": true,
+          "is_unlisted": false,
+          "has_ypc_metadata": false,
+          "view_count": 37220,
+          "category": "Science & Technology",
+          "publish_date": "2026-05-12T02:56:10-07:00",
+          "upload_date": "2026-05-12T02:56:10-07:00",
+          "available_countries": [
+            "AD",
+            "AE",
+            "AF",
+            "AG",
+            "AI",
+            "AL",
+            "AM",
+            "AO",
+            "AQ",
+            "AR",
+            "AS",
+            "AT",
+            "AU",
+            "AW",
+            "AX",
+            "AZ",
+            "BA",
+            "BB",
+            "BD",
+            "BE",
+            "BF",
+            "BG",
+            "BH",
+            "BI",
+            "BJ",
+            "BL",
+            "BM",
+            "BN",
+            "BO",
+            "BQ",
+            "BR",
+            "BS",
+            "BT",
+            "BV",
+            "BW",
+            "BY",
+            "BZ",
+            "CA",
+            "CC",
+            "CD",
+            "CF",
+            "CG",
+            "CH",
+            "CI",
+            "CK",
+            "CL",
+            "CM",
+            "CN",
+            "CO",
+            "CR",
+            "CU",
+            "CV",
+            "CW",
+            "CX",
+            "CY",
+            "CZ",
+            "DE",
+            "DJ",
+            "DK",
+            "DM",
+            "DO",
+            "DZ",
+            "EC",
+            "EE",
+            "EG",
+            "EH",
+            "ER",
+            "ES",
+            "ET",
+            "FI",
+            "FJ",
+            "FK",
+            "FM",
+            "FO",
+            "FR",
+            "GA",
+            "GB",
+            "GD",
+            "GE",
+            "GF",
+            "GG",
+            "GH",
+            "GI",
+            "GL",
+            "GM",
+            "GN",
+            "GP",
+            "GQ",
+            "GR",
+            "GS",
+            "GT",
+            "GU",
+            "GW",
+            "GY",
+            "HK",
+            "HM",
+            "HN",
+            "HR",
+            "HT",
+            "HU",
+            "ID",
+            "IE",
+            "IL",
+            "IM",
+            "IN",
+            "IO",
+            "IQ",
+            "IR",
+            "IS",
+            "IT",
+            "JE",
+            "JM",
+            "JO",
+            "JP",
+            "KE",
+            "KG",
+            "KH",
+            "KI",
+            "KM",
+            "KN",
+            "KP",
+            "KR",
+            "KW",
+            "KY",
+            "KZ",
+            "LA",
+            "LB",
+            "LC",
+            "LI",
+            "LK",
+            "LR",
+            "LS",
+            "LT",
+            "LU",
+            "LV",
+            "LY",
+            "MA",
+            "MC",
+            "MD",
+            "ME",
+            "MF",
+            "MG",
+            "MH",
+            "MK",
+            "ML",
+            "MM",
+            "MN",
+            "MO",
+            "MP",
+            "MQ",
+            "MR",
+            "MS",
+            "MT",
+            "MU",
+            "MV",
+            "MW",
+            "MX",
+            "MY",
+            "MZ",
+            "NA",
+            "NC",
+            "NE",
+            "NF",
+            "NG",
+            "NI",
+            "NL",
+            "NO",
+            "NP",
+            "NR",
+            "NU",
+            "NZ",
+            "OM",
+            "PA",
+            "PE",
+            "PF",
+            "PG",
+            "PH",
+            "PK",
+            "PL",
+            "PM",
+            "PN",
+            "PR",
+            "PS",
+            "PT",
+            "PW",
+            "PY",
+            "QA",
+            "RE",
+            "RO",
+            "RS",
+            "RU",
+            "RW",
+            "SA",
+            "SB",
+            "SC",
+            "SD",
+            "SE",
+            "SG",
+            "SH",
+            "SI",
+            "SJ",
+            "SK",
+            "SL",
+            "SM",
+            "SN",
+            "SO",
+            "SR",
+            "SS",
+            "ST",
+            "SV",
+            "SX",
+            "SY",
+            "SZ",
+            "TC",
+            "TD",
+            "TF",
+            "TG",
+            "TH",
+            "TJ",
+            "TK",
+            "TL",
+            "TM",
+            "TN",
+            "TO",
+            "TR",
+            "TT",
+            "TV",
+            "TW",
+            "TZ",
+            "UA",
+            "UG",
+            "UM",
+            "US",
+            "UY",
+            "UZ",
+            "VA",
+            "VC",
+            "VE",
+            "VG",
+            "VI",
+            "VN",
+            "VU",
+            "WF",
+            "WS",
+            "YE",
+            "YT",
+            "ZA",
+            "ZM",
+            "ZW"
+          ],
+          "start_timestamp": null,
+          "end_timestamp": null
+        },
+        "playability_status": "[Circular]",
+        "player_config": "[Circular]",
+        "captions": "[Circular]",
+        "video_details": {
+          "__type": "hq",
+          "id": "DNqsMXH6Eog",
+          "channel_id": "UCswG6FSbgZjbWtdf_hMLaow",
+          "title": "New Skills! /handoff, /prototype, /review and /writing-* | Skills Changelog",
+          "duration": 766,
+          "is_owner_viewing": false,
+          "short_description": "I've added two brand new skills to my arsenal: /handoff and /prototype. Both are awesome for working with AI agents during planning and prototyping phases.\n\n0:00 Intro\n0:12 /handoff\n3:49 /prototype\n6:39 Bug fixes and prompt improvements\n9:04 Writing skills in progress\n11:03 /review\n\nKeep up to date with my skills:\n\nhttps://aihero.dev/s/iDTI1S\n\nLearn more about the skills:\n\nhttps://aihero.dev/s/DVMypo\n\nFollow Matt on Twitter\n\nhttps://twitter.com/mattpocockuk\n\nJoin the Discord:\n\nhttps://aihero.dev/s/FUCbUs",
+          "thumbnail": "[Circular]",
+          "allow_ratings": true,
+          "view_count": 37220,
+          "author": "Matt Pocock",
+          "is_private": false,
+          "is_live": false,
+          "is_live_content": false,
+          "is_live_dvr_enabled": false,
+          "is_upcoming": false,
+          "is_crawlable": true,
+          "is_post_live_dvr": false,
+          "is_low_latency_live_stream": false
+        },
+        "storyboards": "[Circular]",
+        "cards": "[Circular]"
+      },
+      null
+    ]
+  }

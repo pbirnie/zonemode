@@ -1,0 +1,35 @@
+---
+description: Route all logging through the shared createLogger module
+globs: src/**/*.ts, src/**/*.tsx
+alwaysApply: false
+---
+
+# Use Shared Logger
+
+All logging in `src/` **must** go through `createLogger` from `src/shared/logger.ts`.
+
+## Do
+
+```typescript
+import { createLogger } from "../../shared/logger";
+const log = createLogger("my-tag");
+
+log.log("something happened", { detail });
+log.error("failed:", error);
+log.warn("unexpected state", value);
+```
+
+## Do not
+
+```typescript
+console.log("something happened");   // ← bare console call
+console.error("failed:", error);      // ← bare console call
+```
+
+## Why
+
+`createLogger` writes to **both** the browser console **and** an in-memory store powering the on-page Log panel. Bare `console.*` calls bypass the in-memory store, so they won't appear in the on-page debug panel.
+
+## Background service worker
+
+The background script (`src/background/index.ts`) currently uses bare `console.*` because the in-memory store isn't shared across contexts. When adding or editing logging in the background, still prefer `createLogger` — it will write to the service worker console the same way and keeps the convention consistent. If the shared store is later bridged to the content script, background logs will surface automatically.

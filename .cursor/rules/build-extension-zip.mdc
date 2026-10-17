@@ -1,0 +1,13 @@
+---
+description: Build dist/ and extension-unpacked.zip using the project skill when packaging
+globs: build.ts, package.json, .github/**/*
+alwaysApply: false
+---
+
+# Extension ZIP packaging
+
+When the user asks to **build the release zip**, **package the extension**, **create extension-unpacked.zip**, or **zip dist** for Chrome load-unpacked / GitHub releases:
+
+1. Follow **[`../skills/build-extension-zip/SKILL.md`](../skills/build-extension-zip/SKILL.md)** — `bun run build` plus PowerShell **`ZipFile::CreateFromDirectory`** on `dist/` so **`manifest.json`** is at the zip root.
+
+For a plain **`bun run build`** with no zip artifact requested, the zip step is optional.

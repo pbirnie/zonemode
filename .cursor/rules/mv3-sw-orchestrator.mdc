@@ -1,0 +1,24 @@
+---
+description: MV3 service worker stays a thin orchestrator; heavy work lives in the offscreen document.
+alwaysApply: true
+---
+
+# MV3 service worker = orchestrator only
+
+The **background service worker** (`src/background/index.ts`) must **not** implement long-running or heavyweight work.
+
+## Do not add to the service worker
+
+- **`fetch`** for AI, OpenRouter, or arbitrary proxy URLs (use **`forwardToOffscreen`** with `PROXY_REQUEST` / `OPENROUTER_COMPLETE` in `src/offscreen/offscreen.ts`).
+- **`@openrouter/ai-sdk-provider`**, **`ai`** / `generateText`, or other LLM client code.
+- **`@huggingface/transformers`**, ONNX Runtime Web, or zero-shot classification.
+- **`youtubei.js` / Innertube** (`getBasicInfo`, player, etc.).
+
+## Do instead
+
+- **Route** `chrome.runtime.onMessage` and **ensure** the offscreen document via `src/background/orchestrator.ts` (`forwardToOffscreen`, `handleOffscreenRpc`).
+- Keep **storage/settings** helpers that only touch `chrome.storage` or `chrome.action` / `chrome.windows` in the SW when they are trivial synchronous orchestration.
+
+## Regression check
+
+Before merging changes that touch `src/background/`, confirm the built **`dist/background/index.js`** does not newly bundle ORT, Transformers, OpenRouter, or youtubei.js. Heavy deps belong in **`src/offscreen/`**.
