@@ -60,6 +60,7 @@ Examples where this was done:
 
 - Transcript downloader
 - Client library for calling OpenRouter
+- Client library to estimate the number of tokens in some text (in this case it is the video transcript) 
 
 ### Benchmark Before Full Integration
 
@@ -78,7 +79,13 @@ This was abandoned but the code base and simple keyword matching works well
 Iterating on features is very fast and simple but over time the code base will built up dead code fragments or libraries.
 
 Vestigial code is the term for that. It is code that remains after the feature it belonged to was abandoned. It may still compile, and sometimes still run, but it no longer serves the product.
- 
+
+## Skills
+
+Skills this code base has are: 
+
+   * How to build a release (bump the version number, update release notes, create a distribution zip)
+   * How to analyse the human-cursor conversation to indentify common, recurring issues. This is useless functionality now, as the human ai interation has improved so much over last 6 months that there are rarely misunderstandings. 
 
 ### Terms.md
 
