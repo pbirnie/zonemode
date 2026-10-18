@@ -211,6 +211,14 @@ This document records **non-obvious platform, browser, or API constraints** that
 
 **Mitigation.** Prefer **`ytd-watch-metadata.insertAdjacentElement("afterend", container)`** when that element exists inside **`#above-the-fold`**; fallback to the legacy **first-child** insertion when metadata is absent; add **`position: relative; z-index: 2`** on **`#zonemode-extension-container`** in **`styles.css`** to win against incidental sibling overlays while staying below site-wide dialogs.
 
+---
+
+## 26. `youtube-transcript-plus` caption language match is exact
+
+**Obstacle.** **`fetchTranscript(videoId, { lang: "en" })`** selects a caption track only when **`languageCode === "en"`** (**`youtube-transcript-plus`**). YouTube often lists English as **`en-US`** or **`en-GB`**. That throws **`YoutubeTranscriptNotAvailableLanguageError`**, which **`extractSubtitles`** logged via **`console.warn`** (`content/index.js` logger `HI` / `warn`, anonymous `.catch`) before fetching the first track of any language.
+
+**Mitigation.** On that error, **`pickCaptionLanguageCode`** in **`src/content/utils/subtitles.ts`** chooses exact **`en`**, else the first **`en-*`** code, else the first listed track, and fetches that code. No warning for a regional English track.
+
 ### Maintaining this file
 
 When a fix is forced by a **platform / browser / extension / dependency** limitation, append the next section as **`## {N+1}. …`** (see **[hurdles-log.mdc](../.cursor/rules/hurdles-log.mdc)**) and keep **chronological** order — insert in-order by **discovery date** if known, or append at the end with a short **“Approx. era”** note in the **Obstacle** paragraph.

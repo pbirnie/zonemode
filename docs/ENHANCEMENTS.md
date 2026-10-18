@@ -6,6 +6,10 @@ Agents and contributors should add changelog sections here whenever they ship ne
 
 ## Changelog
 
+### Unreleased
+
+- **Summarize**: English captions listed as `en-US` or `en-GB` are used directly. The console warning from requesting exact `en` and then any language is gone.
+
 ### 1.0.9 — 2026-10-18
 
 - **Settings popup**: The window no longer adds its own scrollbar on top of the page scroll. The popup scrolls once; a long keyword list still scrolls inside its box.

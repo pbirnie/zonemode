@@ -70,7 +70,7 @@ It would have been better to start with the test bench page and evaluate effecti
 
 ## BERT one shot classifier
 
-The classifier that was attempted was a BERT one shot classifier that was downloaded from hugging face and ran inside the browser via the ONNF api 
+The classifier that was attempted was a BERT one shot classifier that was downloaded from hugging face and ran inside the browser  
 Knowlege on how to do this simply came from talking to grok about possible ways to solve the problem of video classification.  
 This was abandoned but the code base and simple keyword matching works well
 

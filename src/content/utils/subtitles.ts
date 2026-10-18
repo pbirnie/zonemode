@@ -1,10 +1,58 @@
-import { fetchTranscript } from "youtube-transcript-plus";
+import {
+  fetchTranscript,
+  YoutubeTranscriptNotAvailableLanguageError,
+} from "youtube-transcript-plus";
 import { createLogger } from "../../shared/logger";
 
 const log = createLogger("subtitles");
 
 /** Minimum meaningful transcript length (characters) after trim. */
 const MIN_TRANSCRIPT_CHARS = 40;
+
+const TRANSCRIPT_CACHE_TTL_MS = 1_800_000;
+
+/**
+ * youtube-transcript-plus matches `languageCode === lang` exactly.
+ * YouTube often publishes English as `en-US` / `en-GB` rather than `en`.
+ * Prefer exact `en`, then any `en-*`, otherwise the first listed track.
+ */
+export function pickCaptionLanguageCode(
+  codes: readonly string[]
+): string | undefined {
+  const available = codes.map((code) => code.trim()).filter(Boolean);
+  const exact = available.find((code) => code.toLowerCase() === "en");
+  if (exact) return exact;
+  const regional = available.find((code) =>
+    code.toLowerCase().startsWith("en-")
+  );
+  if (regional) return regional;
+  return available[0];
+}
+
+async function fetchLibrarySegments(videoId: string) {
+  try {
+    return await fetchTranscript(videoId, {
+      lang: "en",
+      cacheTTL: TRANSCRIPT_CACHE_TTL_MS,
+    });
+  } catch (err) {
+    if (!(err instanceof YoutubeTranscriptNotAvailableLanguageError)) {
+      throw err;
+    }
+    const lang = pickCaptionLanguageCode(err.availableLangs);
+    if (!lang || lang.toLowerCase() === "en") {
+      throw err;
+    }
+    log.log("caption language is not exact en, fetching", {
+      lang,
+      available: err.availableLangs,
+    });
+    return fetchTranscript(videoId, {
+      lang,
+      cacheTTL: TRANSCRIPT_CACHE_TTL_MS,
+    });
+  }
+}
 
 function wait(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -143,14 +191,7 @@ export async function extractSubtitles(): Promise<ExtractSubtitlesResult> {
   let transcriptFromLibrary = "";
 
   try {
-    const segments = await fetchTranscript(videoId, {
-      lang: "en",
-      cacheTTL: 1800000,
-    }).catch(async (err: Error) => {
-      log.warn("English transcript failed, trying any language:", err.message);
-      libraryErrorMessage = err.message;
-      return fetchTranscript(videoId, { cacheTTL: 1800000 });
-    });
+    const segments = await fetchLibrarySegments(videoId);
 
     log.log("got segments", { count: segments.length });
 

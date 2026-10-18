@@ -10,6 +10,12 @@ export interface PopupChangelogSection {
 /** Newest sections first. */
 export const POPUP_CHANGELOG: PopupChangelogSection[] = [
   {
+    title: "Unreleased",
+    items: [
+      "Summarize uses English captions listed as en-US or en-GB. The warning from asking for exact en, then any language, is gone.",
+    ],
+  },
+  {
     title: "1.0.9",
     items: [
       "Settings popup: one page scrollbar plus the keyword-box scrollbar. The extra window scrollbar is gone.",

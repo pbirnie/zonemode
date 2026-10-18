@@ -1,4 +1,4 @@
-# ZoneMode  
+# ZoneMode
 
 A Chrome extension that allows you to focus on a specific category of video content
 It generates concise summaries of YouTube videos using AI. 
@@ -10,7 +10,6 @@ Supports access to 500 AI models via OpenRouter.
 - Generate summaries of YouTube videos
 - Chat with AI about the video content
 
-
 ## Quick Installation
 
 1. Go to the [Releases](../../releases) page
@@ -19,7 +18,31 @@ Supports access to 500 AI models via OpenRouter.
 4. Enable "Developer mode" in the top right
 5. Drag and drop `extension-unpacked.zip` directly onto the extensions page
 
-That's it! No need to extract the ZIP or click any buttons.
+got youtube.com and choose a specific video (such as **[https://www.youtube.com/watch?v=xfH-gcBfO9I](AI Bubble))**
+
+you will see the plugin injected into the page below the video
+to get to the setting page, choose the cog icon, as shown here
+
+![Cog icon on the YouTube watch page, next to Summarize](docs/cog_icon.png)
+
+now choose api tab and select openrouter, as shown here, you will need to generate an api key as shown below
+
+![api settings tab](docs/api_key_config.png)
+
+### Generating an openrouter api key
+
+Using openrouter as the api to access 500 models 
+
+setup an account on https://openrouter.ai. Ensure you use a unique password, there are lots of incentives for hackers to steal access to your openrouter account 
+
+goto https://openrouter.ai/workspaces/default/keys
+generate a openrouter client key, ensure that you
+    - set a max usage per month of $5
+    - never share the client key with anyone. If it does get stolen it will be limited to the $5 limit you setup
+
+paste the generate client key into the zonemode configuration page 
+
+That's it!  
 
 ## Configuration
 
