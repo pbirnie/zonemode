@@ -60,7 +60,7 @@ Examples where this was done:
 
 - Transcript downloader
 - Client library for calling OpenRouter
-- Client library to estimate the number of tokens in some text (in this case it is the video transcript) 
+- Client library to estimate the number of tokens in some text (in this case it is the video transcript)
 
 ### Benchmark Before Full Integration
 
@@ -74,28 +74,27 @@ The classifier that was attempted was a BERT one shot classifier that was downlo
 Knowlege on how to do this simply came from talking to grok about possible ways to solve the problem of video classification.  
 This was abandoned but the code base and simple keyword matching works well
 
-## Vestigial (dead) code 
+## Vestigial (dead) code
 
 Iterating on features is very fast and simple but over time the code base will built up dead code fragments or libraries.
-
-Vestigial code is the term for that. It is code that remains after the feature it belonged to was abandoned. It may still compile, and sometimes still run, but it no longer serves the product.
 
 ## Skills
 
 Skills this code base has are: 
 
-   *'bump the release' How to build a release (bump the version number, update release notes, create a distribution zip)
-   * How to analyse the human-cursor conversation to indentify common, recurring issues. This is useless functionality now, as the human ai interation has improved so much over last 6 months that there are rarely misunderstandings. 
+- How to build a release (bump the version number, update release notes, create a distribution zip). This allows me to simply say 'bump and build a the release'
+
+* How to analyse the human-cursor conversation to indentify common, recurring issues. This is useless functionality now, as the human ai interation has improved so much over last 6 months that there are rarely misunderstandings.
 
 ### Terms.md
 
-Write a seperate file to capture terms so that ai and you can use the same term to refer to components on the page. This is especially important when working in a domain that you do not know well. If you do not know the correct term ai would like to use for a concept - for example the a  
+Write a seperate file to capture terms so that ai and you can use the same term to refer to components on the page. This is especially important when working in a domain that you do not know well. If you do not know the correct term, ask AI what is the best/correct term for a concept and then ask it to add it to Terms.md - for example the videos on the right hand side of the main video are called  CompactVideos, a Service worker is a background thread that can run in the extension. We agreed in the terms to refer to it as SW, so prompts can unambiguously refer to it as SW  
 
 ## Hurdles.md
 
 Have a rule to capture technical obstacles as they have been encountered. working with technology 
 
-## Enhancements.md 
+## Enhancements.md
 
 Have a rule to capture what features have been added. This is used for release notes. 
 
@@ -103,7 +102,7 @@ Have a rule to capture what features have been added. This is used for release n
 
 start a project by defining the requirements in a prd (product requirements document). have a conversation with grok to generate this document and human-review it as the starting point on project setup
 
-## Architecture.md 
+## Architecture.md
 
 have a rule to update a high level 
 including pseudocode is especially useful when working with a language you do not know
