@@ -19,7 +19,7 @@ A Chrome extension that :
 4. Enable "Developer mode" in the top right
 5. Drag and drop `extension-unpacked.zip` directly onto the extensions page
 
-got youtube.com and choose a specific video (such as **[https://www.youtube.com/watch?v=xfH-gcBfO9I](AI Bubble))**
+got youtube.com and choose a specific video (such as **[AI Bubble](https://www.youtube.com/watch?v=xfH-gcBfO9I)**)
 
 you will see the plugin injected into the page below the video
 to get to the setting page, choose the cog icon, as shown here
@@ -59,7 +59,7 @@ That's it!
 4. Use the chat feature to ask questions about the video
 
 ## Development
-
+**LESSONS:** [docs/LESSONS.md](docs/LESSONS.md) — high level summary of lessons learnt from building this project with cursor IDE
 **Architecture:** [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) — Mermaid diagrams (browser, content script, service worker, messages) render on GitHub.
 
 ```bash

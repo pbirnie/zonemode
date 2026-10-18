@@ -1,0 +1,30 @@
+---
+description: Scan for OpenRouter API keys before commit, push, or a release zip
+alwaysApply: true
+---
+
+# No OpenRouter keys in git or release zips
+
+Before **git commit**, **git push**, or building **`extension-unpacked.zip`**, scan the change and the artifact. Stop if a real key is present. Do not print the key. Report only the path and a redacted prefix (`sk-or-…`).
+
+## What counts as a key
+
+- `sk-or-v1-` or `sk-or-` followed by a token
+- A bearer token assigned as a literal `apiKey` in source, JSON, markdown, or env files
+
+`chrome.storage` reads and empty defaults are fine. A screenshot of a masked field (dots only) is fine when the file bytes do not contain `sk-or-`.
+
+## Scan
+
+From the repo root, before the action:
+
+```bash
+git grep -I -n -E 'sk-or-v1-|sk-or-[A-Za-z0-9]' -- . || true
+git diff --cached -G 'sk-or-' || true
+```
+
+Also run `git log -S 'sk-or-' --all --oneline` when the push may include history that was not just scanned.
+
+For a release zip, scan `extension-unpacked.zip` entry text and any new image under `docs/` for the same `sk-or-` pattern.
+
+If a hit is a real key, remove it from the commit, from history you are about to push, and from the zip. Do not commit, push, or ship the zip until the scan is clean.
