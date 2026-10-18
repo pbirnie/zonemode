@@ -1,6 +1,7 @@
 # ZoneMode  
 
-A Chrome extension that generates concise summaries of YouTube videos using AI. 
+A Chrome extension that allows you to focus on a specific category of video content
+It generates concise summaries of YouTube videos using AI. 
 Supports access to 500 AI models via OpenRouter.
 
 ## Features

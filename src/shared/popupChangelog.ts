@@ -10,7 +10,7 @@ export interface PopupChangelogSection {
 /** Newest sections first. */
 export const POPUP_CHANGELOG: PopupChangelogSection[] = [
   {
-    title: "Unreleased",
+    title: "1.0.9",
     items: [
       "Settings popup: one page scrollbar plus the keyword-box scrollbar. The extra window scrollbar is gone.",
       "Toolbar icon is the ZoneMode mark (16, 32, 48, and 128).",

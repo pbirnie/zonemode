@@ -6,7 +6,7 @@ Agents and contributors should add changelog sections here whenever they ship ne
 
 ## Changelog
 
-### Unreleased
+### 1.0.9 — 2026-10-18
 
 - **Settings popup**: The window no longer adds its own scrollbar on top of the page scroll. The popup scrolls once; a long keyword list still scrolls inside its box.
 - **Toolbar icon**: The extension icon is the ZoneMode mark (`src/static/icons/`, sizes 16, 32, 48, and 128) instead of the generated red “S”.

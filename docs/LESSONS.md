@@ -84,7 +84,7 @@ Vestigial code is the term for that. It is code that remains after the feature i
 
 Skills this code base has are: 
 
-   * How to build a release (bump the version number, update release notes, create a distribution zip)
+   *'bump the release' How to build a release (bump the version number, update release notes, create a distribution zip)
    * How to analyse the human-cursor conversation to indentify common, recurring issues. This is useless functionality now, as the human ai interation has improved so much over last 6 months that there are rarely misunderstandings. 
 
 ### Terms.md
