@@ -1,18 +1,23 @@
+:root {
+  --popup-width: 480px;
+  /* Stay within Chrome's extension-popup cap so the window itself does not add a scrollbar. */
+  --popup-max-height: 600px;
+}
+
 html {
   margin: 0;
   padding: 0;
-}
-
-:root {
-  --popup-width: 480px;
-  --popup-max-height: 680px;
+  height: var(--popup-max-height);
+  max-height: var(--popup-max-height);
+  overflow: hidden;
 }
 
 body {
   width: var(--popup-width);
+  height: var(--popup-max-height);
+  max-height: var(--popup-max-height);
   margin: 0;
   padding: 0;
-  max-height: var(--popup-max-height);
   overflow: hidden;
   background-color: #1a1b1e;
   color: #f3f4f6;
@@ -20,11 +25,13 @@ body {
 }
 
 /**
- * Single scroll container for the popup: avoids nested overflow/flex min-height quirks
- * (e.g. wheel / trackpad stuck after editing a profile keywords textarea).
+ * Page scroll lives only on `#root`. Keyword textareas keep their own scrollbar
+ * when the list is longer than the field. `html`/`body` stay overflow hidden so
+ * Chrome does not add a third bar on the popup window.
  */
 #root {
-  max-height: var(--popup-max-height);
+  height: 100%;
+  max-height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;

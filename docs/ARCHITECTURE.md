@@ -110,7 +110,7 @@ erDiagram
 
 | Data store | Where it lives | How long data is kept | Example payload (one key / entry) |
 | --- | --- | --- | --- |
-| **Extension settings** | `chrome.storage.sync` | **Persistent** until changed. Toolbar **Save** removes legacy **`profileFilterZeroShot*`** keys. | **Key** `selectedSummaryProfileId` → `"default"`. |
+| **Extension settings** | `chrome.storage.sync` | **Persistent** until changed. First **install** seeds **`summaryUserProfiles`** with **AiFocus** (`aifocus`), **News** (`news`), and **Finance** (`finance`), sets **`selectedSummaryProfileId`** to **`aifocus`**, and sets **`selectedProvider`** to **OpenRouter** with **`selectedModel`** **`xiaomi/mimo-v2.5`**. When those provider keys are unset, the UI uses the same defaults. Toolbar **Save** removes legacy **`profileFilterZeroShot*`** keys. | **Key** `selectedSummaryProfileId` → `"aifocus"` after install, or `"default"` when unset. |
 | **Profile-filter metadata** | **L1:** in-tab `Map` in **`profileFilterMetaCache.ts`**. **L2:** **`chrome.storage.local`** `ytSum_pfMeta_v1::<videoId>`. | **12 minutes** per row (**`PROFILE_FILTER_META_TTL_MS`**); **~200** videos max locally. Cleared by **Clear Cache**. | JSON row with **`videoKeywordsLower`**, **`classifierText`**, etc. (**`ProfileFilterMetaHaystackPersisted`**). |
 | **Metadata hover JSON** | **`videoLinkTooltips.ts`** Map | **7 days** (**`CACHE_TTL_MS`**). | `videoId` → `{ fetchedAt, jsonText }`. |
 | **Transcript cache** | `youtube-transcript-plus` | **30 minutes** (**`cacheTTL`** in subtitles path). | Opaque library entry. |

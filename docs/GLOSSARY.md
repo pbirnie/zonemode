@@ -1,4 +1,4 @@
-## Agreed terms (glossary)
+## Agreed terms (Glossary)
 
 Short definitions used throughout this PRD and **[ARCHITECTURE.md](docs/ARCHITECTURE.md)**. Extension / Chrome terms follow **MV3** (Manifest V3).
 
@@ -21,5 +21,6 @@ Short definitions used throughout this PRD and **[ARCHITECTURE.md](docs/ARCHITEC
 CompactVideos - the small videos components in the side pannel 
 SummarizeButton - the button we inject into the page
 VideoMetadataTooltips - the metadata extracted about each video
+ClassifierTestBench - the diagnostic page used to help verify classification logic
 ```
 

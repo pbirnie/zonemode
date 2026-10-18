@@ -15,9 +15,7 @@ export const STORAGE_KEY_MAX_TOKENS = "maxTokens";
 /** Legacy default mentioned in help text as an example cap only; stored default is None (omit). */
 export const DEFAULT_MAX_TOKENS = 100;
 
-export const DEFAULT_SUMMARY_PROMPT_TEMPLATE = `Provide a concise summary of this YouTube video transcript using markdown formatting.
-
-Video title: ${TITLE_PLACEHOLDER}
+export const DEFAULT_SUMMARY_PROMPT_TEMPLATE = `Provide a concise summary of this YouTube video transcript using markdown formatting:
 
 ${TRANSCRIPT_PLACEHOLDER}
 
@@ -34,17 +32,19 @@ Formatting rules:
 - Use \`code\` for technical terms
 - Use [text](link) for any references
 
-Be direct and concise. Do not use introductory phrases like "Here's a summary" or "Let me summarize".`;
+Be direct and concise. Do not use introductory phrases like "Here's a summary" or "Let me summarize". Think step-by-step internally but output only the final paragraph.`;
 
-export const DEFAULT_CHAT_SYSTEM_PROMPT_TEMPLATE = `You are a friendly and helpful AI assistant discussing a YouTube video.
-
-Video title: ${TITLE_PLACEHOLDER}
-
-Summary for context:
+export const DEFAULT_CHAT_SYSTEM_PROMPT_TEMPLATE = `You are a friendly and helpful AI assistant discussing a YouTube video. Here is the video's summary for context:
 
 ${SUMMARY_PLACEHOLDER}
 
-If the user asks something that isn't covered in the summary, you can say so while still trying to be helpful based on the context you have. Be direct and concise in your responses.`;
+video title: ${TITLE_PLACEHOLDER}
+
+if you cannot find answer in here, use the full transcript:
+
+${TRANSCRIPT_PLACEHOLDER}
+
+If the user asks something that isn't covered in the summary, you can say so while still trying to be helpful based on the context you have. Be direct and concise in your responses. Put a terse one-liner of the summary at the start of the response. Start the summary with a terse one-liner before giving a longer answer.`;
 
 function substituteAll(haystack: string, needle: string, value: string): string {
   if (!needle) return haystack;
@@ -90,7 +90,8 @@ export function resolveSummaryUserPrompt(
 export function resolveChatSystemPrompt(
   summary: string,
   stored: string | undefined | null,
-  videoTitle?: string
+  videoTitle?: string,
+  transcript?: string
 ): string {
   const usingCustom = typeof stored === "string" && stored.trim() !== "";
   const template = usingCustom ? stored! : DEFAULT_CHAT_SYSTEM_PROMPT_TEMPLATE;
@@ -98,16 +99,24 @@ export function resolveChatSystemPrompt(
   log.log("resolveChatSystemPrompt", {
     customTemplate: usingCustom,
     summaryLen: summary.length,
+    transcriptLen: (transcript ?? "").length,
     hasSummaryPlaceholder: template.includes(SUMMARY_PLACEHOLDER),
     hasTitlePlaceholder: template.includes(TITLE_PLACEHOLDER),
+    hasTranscriptPlaceholder: template.includes(TRANSCRIPT_PLACEHOLDER),
     titleLen: (videoTitle ?? "").length,
   });
 
-  const withTitle = applyVideoTitle(template, videoTitle);
+  let text = applyVideoTitle(template, videoTitle);
 
-  if (withTitle.includes(SUMMARY_PLACEHOLDER)) {
-    return substituteAll(withTitle, SUMMARY_PLACEHOLDER, summary);
+  if (text.includes(SUMMARY_PLACEHOLDER)) {
+    text = substituteAll(text, SUMMARY_PLACEHOLDER, summary);
+  } else {
+    text = `${text}\n\n--- Summary ---\n\n${summary}`;
   }
 
-  return `${withTitle}\n\n--- Summary ---\n\n${summary}`;
+  if (text.includes(TRANSCRIPT_PLACEHOLDER)) {
+    text = substituteAll(text, TRANSCRIPT_PLACEHOLDER, transcript ?? "");
+  }
+
+  return text;
 }

@@ -12,6 +12,11 @@ export const POPUP_CHANGELOG: PopupChangelogSection[] = [
   {
     title: "Unreleased",
     items: [
+      "Settings popup: one page scrollbar plus the keyword-box scrollbar. The extra window scrollbar is gone.",
+      "Toolbar icon is the ZoneMode mark (16, 32, 48, and 128).",
+      "Default chat prompt includes the summary, video title, and full transcript. Replies should open with a terse one-liner of the summary, then a longer answer. A saved chat prompt stays until you change it or reset prompts.",
+      "API defaults to OpenRouter and model xiaomi/mimo-v2.5 when nothing is saved. Built-in summary prompt is a concise markdown Key Points summary of the transcript (no title placeholder). Saved prompts and providers stay until you change them or reset prompts.",
+      "New installs start with AiFocus selected (keywords: AI, LLM, Artificial Intelligence, Anthropic, Claude code, Cursor, Fireship, Dwarkesh Patel, Matt Pocock), plus News (Sky News, Ed Conway) and Finance (finance, Patrick Boyle, Sasha Yanshin). Built-in All stays available. Updates do not replace saved profiles.",
       "Renamed to ZoneMode (toolbar and popup title). Formerly youtube-summarizer-oss / YouTube Summary.",
       "Watch page: summarize bar mounts below ytd-watch-metadata when present so it stays visible (was easy to hide under the player overlap). Container uses z-index: 2 vs stray overlays.",
       "Settings popup: Save writes to sync then closes the window; Close still exits without saving.",
@@ -19,7 +24,7 @@ export const POPUP_CHANGELOG: PopupChangelogSection[] = [
       "Metadata hover: if profile-filter meta is in the tab cache (L1), shows cache-only profile_filter_worker JSON immediately (no Loading row) while getBasicInfo runs.",
       "Metadata hover: ~300ms dwell on a link before the diagnostic panel (fewer accidental opens).",
       "Toolbar settings: sticky Save, Close, sync hint + tabs; profiles scroll in popup root only (no textarea max-height scrollbar).",
-      "Prompt templates: built-in defaults include {{TITLE}} with {{TRANSCRIPT}} and {{SUMMARY}} (filled from watch page on Summarize; same title for Ask Questions).",
+      "Prompt templates: summary uses {{TRANSCRIPT}}. Chat uses {{SUMMARY}}, {{TITLE}}, and {{TRANSCRIPT}}.",
       "Removed MobileBERT / zero-shot filter: sidebar match is metadata_exact tokens only (Innertube basic_info.keywords plus channel term). Toolbar Save clears legacy sync keys profileFilterZeroShotEnabled / profileFilterZeroShotThresholdPct. No ONNX/Transformers; dropped Hugging Face host_permissions and wasm-unsafe-eval CSP.",
       "Classifier test bench: 7 columns; Reclassify uses finalizeProfileVideoResult only (no offscreen ONNX). Removed wink-nlp Entities/Nouns.",
       "Settings Debug: removed zero-shot + threshold toggles and title-only classifier-text sync key (profileFilterClassifierTitleOnly cleared on Save).",

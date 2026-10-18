@@ -8,7 +8,7 @@ import {
 import { generateSummary } from "../utils/ai";
 import { getWatchPageVideoTitle } from "../utils/watchPageTitle";
 import type { AIProvider } from "../../shared/config";
-import { providers } from "../../shared/config";
+import { defaultAiProvider } from "../../shared/config";
 import { ChatPanel } from "../../shared/components/ChatPanel";
 import { LogPanel } from "./LogPanel";
 import { createLogger } from "../../shared/logger";
@@ -44,6 +44,8 @@ export const SummaryButton: React.FC = () => {
   } | null>(null);
   /** Title captured when summarizing — forwarded for `{{TITLE}}` in Ask Questions chat prompt. */
   const [promptVideoTitle, setPromptVideoTitle] = useState("");
+  /** Subtitles from that Summarize — forwarded for `{{TRANSCRIPT}}` in the chat system prompt. */
+  const [promptTranscript, setPromptTranscript] = useState("");
   const [selectedProvider, setSelectedProvider] = useState<AIProvider | null>(
     null
   );
@@ -78,13 +80,14 @@ export const SummaryButton: React.FC = () => {
           provider: result.selectedProvider?.name ?? "(default)",
           model: result.selectedModel ?? "(default)",
         });
-        setApiKey(result.apiKey || null);
-        setSelectedProvider(result.selectedProvider || providers[0]);
-        setSelectedModel(
+        const provider = result.selectedProvider || defaultAiProvider();
+        const storedModel =
           typeof result.selectedModel === "string"
-            ? result.selectedModel
-            : ""
-        );
+            ? result.selectedModel.trim()
+            : "";
+        setApiKey(result.apiKey || null);
+        setSelectedProvider(provider);
+        setSelectedModel(storedModel || provider.model);
         const list = normalizeUserProfiles(
           result[STORAGE_KEY_SUMMARY_USER_PROFILES]
         );
@@ -118,7 +121,9 @@ export const SummaryButton: React.FC = () => {
         setApiKey(changes.apiKey.newValue || null);
       }
       if (changes.selectedProvider) {
-        setSelectedProvider(changes.selectedProvider.newValue || providers[0]);
+        setSelectedProvider(
+          changes.selectedProvider.newValue || defaultAiProvider()
+        );
       }
       if (changes.selectedModel) {
         const v = changes.selectedModel.newValue;
@@ -168,6 +173,7 @@ export const SummaryButton: React.FC = () => {
       setStreamedText("");
       setSummaryMeta(null);
       setPromptVideoTitle("");
+      setPromptTranscript("");
       setError(null);
       setIsLoading(false);
     };
@@ -293,6 +299,7 @@ export const SummaryButton: React.FC = () => {
         videoTitle,
       });
       setPromptVideoTitle(videoTitle);
+      setPromptTranscript(subtitles);
       setStreamedText(result.text);
       setSummaryMeta({
         model: result.model,
@@ -318,6 +325,7 @@ export const SummaryButton: React.FC = () => {
       setStreamedText("");
       setSummaryMeta(null);
       setPromptVideoTitle("");
+      setPromptTranscript("");
     } finally {
       setIsLoading(false);
     }
@@ -383,6 +391,7 @@ export const SummaryButton: React.FC = () => {
                   setStreamedText("");
                   setSummaryMeta(null);
                   setPromptVideoTitle("");
+                  setPromptTranscript("");
                 }}
                 className="close-button"
               >
@@ -397,6 +406,7 @@ export const SummaryButton: React.FC = () => {
                 summary={streamedText}
                 provider={selectedProvider}
                 videoTitle={promptVideoTitle}
+                transcript={promptTranscript}
               />
             )}
           </div>

@@ -7,6 +7,41 @@ export const DEFAULT_SUMMARY_PROFILE_DISPLAY_NAME = "All";
 /** User-defined profiles (excludes built-in id {@link DEFAULT_SUMMARY_PROFILE_ID}). */
 export const STORAGE_KEY_SUMMARY_USER_PROFILES = "summaryUserProfiles";
 
+/**
+ * Seeded into `chrome.storage.sync` on first install only (`onInstalled` reason `install`).
+ * Stable ids so the watch bar can select one without generated UUIDs.
+ * The selected profile on install is {@link INSTALL_DEFAULT_SUMMARY_PROFILE_ID}.
+ */
+export const INSTALL_DEFAULT_SUMMARY_PROFILE_ID = "aifocus";
+
+export const INSTALL_DEFAULT_SUMMARY_PROFILES: SummaryUserProfile[] = [
+  {
+    id: INSTALL_DEFAULT_SUMMARY_PROFILE_ID,
+    name: "AiFocus",
+    keywords: [
+      "AI",
+      "LLM",
+      "Artificial Intelligence",
+      "Anthropic",
+      "Claude code",
+      "Cursor",
+      "Fireship",
+      "Dwarkesh Patel",
+      "Matt Pocock",
+    ],
+  },
+  {
+    id: "news",
+    name: "News",
+    keywords: ["Sky News", "Ed Conway"],
+  },
+  {
+    id: "finance",
+    name: "Finance",
+    keywords: ["finance", "Patrick Boyle", "Sasha Yanshin"],
+  },
+];
+
 /** Last profile chosen on the watch-page summarize bar. */
 export const STORAGE_KEY_SELECTED_SUMMARY_PROFILE_ID =
   "selectedSummaryProfileId";

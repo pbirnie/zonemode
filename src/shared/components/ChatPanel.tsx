@@ -25,6 +25,8 @@ interface ChatPanelProps {
   provider: AIProvider;
   /** Watch-page title captured when the summary ran (for `{{TITLE}}` in chat system prompt). */
   videoTitle?: string;
+  /** Subtitles from that Summarize (for `{{TRANSCRIPT}}` in the chat system prompt). */
+  transcript?: string;
 }
 
 function formatDurationMs(ms: number): string {
@@ -46,6 +48,7 @@ export const ChatPanel: React.FC<ChatPanelProps> = ({
   summary,
   provider,
   videoTitle,
+  transcript,
 }) => {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [inputValue, setInputValue] = useState("");
@@ -92,7 +95,7 @@ export const ChatPanel: React.FC<ChatPanelProps> = ({
         summary,
         provider,
         historyForApi,
-        { videoTitle }
+        { videoTitle, transcript }
       );
       setMessages((prev) => [
         ...prev,

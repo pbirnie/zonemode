@@ -3,7 +3,14 @@ import {
   handleOffscreenRpc,
   isOffscreenRpc,
 } from "./orchestrator";
+import { defaultAiProvider } from "../shared/config";
 import { logPrdEvent } from "../shared/prdEventLog";
+import {
+  INSTALL_DEFAULT_SUMMARY_PROFILE_ID,
+  INSTALL_DEFAULT_SUMMARY_PROFILES,
+  STORAGE_KEY_SELECTED_SUMMARY_PROFILE_ID,
+  STORAGE_KEY_SUMMARY_USER_PROFILES,
+} from "../shared/summaryProfiles";
 import {
   TEST_BENCH_GET_METADATA_SNAPSHOT,
   type TestBenchGetMetadataSnapshotBgResponse,
@@ -188,6 +195,31 @@ chrome.runtime.onInstalled.addListener((details) => {
     reason: details.reason,
     version,
   });
+  if (details.reason !== "install") return;
+  const provider = defaultAiProvider();
+  chrome.storage.sync.set(
+    {
+      [STORAGE_KEY_SUMMARY_USER_PROFILES]: INSTALL_DEFAULT_SUMMARY_PROFILES,
+      [STORAGE_KEY_SELECTED_SUMMARY_PROFILE_ID]:
+        INSTALL_DEFAULT_SUMMARY_PROFILE_ID,
+      selectedProvider: provider,
+      selectedModel: provider.model,
+    },
+    () => {
+      if (chrome.runtime.lastError) {
+        console.error(
+          TAG,
+          "install default profile failed:",
+          chrome.runtime.lastError.message
+        );
+        return;
+      }
+      console.log(TAG, "install default profiles", {
+        selectedId: INSTALL_DEFAULT_SUMMARY_PROFILE_ID,
+        names: INSTALL_DEFAULT_SUMMARY_PROFILES.map((p) => p.name),
+      });
+    }
+  );
 });
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {

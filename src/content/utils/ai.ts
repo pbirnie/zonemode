@@ -299,7 +299,7 @@ export async function askQuestion(
   summary: string,
   provider: AIProvider,
   chatHistory: Message[] = [],
-  options?: { videoTitle?: string }
+  options?: { videoTitle?: string; transcript?: string }
 ): Promise<CompletionResult> {
   const storedChatPrompt = await new Promise<string | undefined>((resolve) => {
     chrome.storage.sync.get([STORAGE_KEY_CHAT_SYSTEM_PROMPT], (r) => {
@@ -311,7 +311,8 @@ export async function askQuestion(
     content: resolveChatSystemPrompt(
       summary,
       storedChatPrompt,
-      options?.videoTitle
+      options?.videoTitle,
+      options?.transcript
     ),
   };
 

@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useEffect, useRef } from "react";
 import type { AIProvider } from "../config";
-import { providers } from "../config";
+import { defaultAiProvider, providers } from "../config";
 import {
   DEFAULT_CHAT_SYSTEM_PROMPT_TEMPLATE,
   DEFAULT_MAX_TOKENS,
@@ -273,7 +273,7 @@ export const SettingsPanel: React.FC<SettingsPanelProps> = ({
         STORAGE_KEY_PROFILE_FILTER_HIDE_NON_MATCHING_COMPACT,
       ],
       (result) => {
-        const provider = result.selectedProvider || providers[0];
+        const provider = result.selectedProvider || defaultAiProvider();
         const savedCustomBaseUrl = result.customBaseUrl || "";
         customBaseUrlRef.current = savedCustomBaseUrl;
         const savedCustomModel =
@@ -289,22 +289,19 @@ export const SettingsPanel: React.FC<SettingsPanelProps> = ({
           if (Number.isFinite(n) && n > 0) loadedMax = Math.min(n, 128000);
         }
 
+        const storedModel =
+          typeof result.selectedModel === "string"
+            ? result.selectedModel.trim()
+            : "";
+        const loadedModel = provider.requiresModelInput
+          ? savedCustomModel || storedModel
+          : storedModel || provider.model;
+
         if (provider.requiresModelInput) {
-          const cm =
-            savedCustomModel ||
-            (typeof result.selectedModel === "string"
-              ? result.selectedModel
-              : "");
-          setCustomModel(cm);
-          setSelectedModel(cm);
+          setCustomModel(loadedModel);
+          setSelectedModel(loadedModel);
         } else {
-          const model =
-            tabbed
-              ? typeof result.selectedModel === "string"
-                ? result.selectedModel
-                : ""
-              : (result.selectedModel as string | undefined) || provider.model;
-          setSelectedModel(model);
+          setSelectedModel(loadedModel);
           setCustomModel(savedCustomModel);
         }
 
@@ -345,18 +342,7 @@ export const SettingsPanel: React.FC<SettingsPanelProps> = ({
 
         // Notify parent components
         onProviderChange?.(provider);
-        onModelChange?.(
-          provider.requiresModelInput
-            ? savedCustomModel ||
-                (typeof result.selectedModel === "string"
-                  ? result.selectedModel
-                  : "")
-            : tabbed
-              ? typeof result.selectedModel === "string"
-                ? result.selectedModel
-                : ""
-              : (result.selectedModel as string | undefined) || provider.model
-        );
+        onModelChange?.(loadedModel);
 
         // Only show API key error for non-local providers
         if (!result.apiKey && !provider.isLocal) {
@@ -980,7 +966,9 @@ export const SettingsPanel: React.FC<SettingsPanelProps> = ({
           Include <code>{SUMMARY_PLACEHOLDER}</code> where the generated summary
           should appear. If it is missing, the summary is appended after your
           text. Optional <code>{TITLE_PLACEHOLDER}</code> uses the same title as
-          when you clicked **Summarize** for **Ask Questions**.
+          when you clicked <strong>Summarize</strong>. Optional{" "}
+          <code>{TRANSCRIPT_PLACEHOLDER}</code> is the subtitle transcript from
+          that Summarize.
         </div>
         <textarea
           id="chatSystemPromptTemplate"

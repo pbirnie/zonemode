@@ -1,6 +1,6 @@
 # ZoneMode — Product Requirements & Event Flow
 
-see **docs/GLOSSARY.md** of terms which the developer will use to keep prompts unambiguous 
+see **[docs/GLOSSARY.md](GLOSSARY.md)** of terms which the developer will use to keep prompts unambiguous 
 
 Chrome extension that injects a summarize UI on YouTube watch pages, provides AI-powered video summaries, and supports profile-based keyword filtering of sidebar videos. **Engineering tradeoffs** (MV3, Cache API, InnerTube, bundling) are summarized in **[HURDLES.md](HURDLES.md)** alongside this PRD. **Rendered diagrams** (sequence + flowcharts, Mermaid): **docs/ARCHITECTURE.md** — visible on the GitHub repo without extra tools.
 
@@ -142,7 +142,12 @@ ON click "Summarize" button:
     title = watch-page title (`og:title` / document.title) for optional {{TITLE}} placeholders
     result = generateSummary(subtitles, profileKeywords, title)
     display summary text + metadata (model, tokens, time, cost)
+    keep subtitles + title for Ask Questions
     set loading = false
+
+ON submit Ask Questions:
+    system = chat template with {{SUMMARY}} = displayed summary, {{TITLE}} = title from Summarize, {{TRANSCRIPT}} = subtitles from that Summarize
+    askQuestion(question, history)
 
 ON change profile <select>:
     update local selectedProfileId
@@ -431,6 +436,23 @@ Debug → "Open classifier test bench":
 
 ON chrome.runtime.onInstalled:
     log install reason and version
+    IF reason == "install":
+        chrome.storage.sync.set({
+            summaryUserProfiles: [
+                { id: "aifocus", name: "AiFocus", keywords: [
+                    "AI", "LLM", "Artificial Intelligence", "Anthropic", "Claude code",
+                    "Cursor", "Fireship", "Dwarkesh Patel", "Matt Pocock"
+                ] },
+                { id: "news", name: "News", keywords: ["Sky News", "Ed Conway"] },
+                { id: "finance", name: "Finance", keywords: [
+                    "finance", "Patrick Boyle", "Sasha Yanshin"
+                ] }
+            ],
+            selectedSummaryProfileId: "aifocus",
+            selectedProvider: OpenRouter (baseUrl https://openrouter.ai/api/v1),
+            selectedModel: "xiaomi/mimo-v2.5"
+        })
+        // updates do not rewrite these keys (keeps profiles the user already saved)
 
 ON chrome.runtime.onMessage:
     MATCH message.type:
@@ -497,15 +519,15 @@ The extension uses **`createLogger`** for normal logs. **PRD-tagged** lines (`pr
 | Key | Type | Default | Used by |
 |-----|------|---------|---------|
 | `apiKey` | string | `""` | SettingsPanel, SummaryButton, Background |
-| `selectedProvider` | AIProvider object | first provider | SettingsPanel, SummaryButton, Background |
-| `selectedModel` | string | `""` | SettingsPanel, SummaryButton |
+| `selectedProvider` | AIProvider object | **OpenRouter** when unset; install writes that provider | SettingsPanel, SummaryButton, Background |
+| `selectedModel` | string | **`xiaomi/mimo-v2.5`** when unset (OpenRouter’s model); install writes that id | SettingsPanel, SummaryButton |
 | `customBaseUrl` | string | `""` | SettingsPanel |
 | `customModel` | string | `""` | SettingsPanel |
-| `summaryPromptTemplate` | string | built-in default | SettingsPanel, AI utils |
-| `chatSystemPromptTemplate` | string | built-in default | SettingsPanel, AI utils |
+| `summaryPromptTemplate` | string | built-in default: concise markdown summary of `{{TRANSCRIPT}}` with a **Key Points** section, formatting rules, and no intro phrase; no `{{TITLE}}` in this template | SettingsPanel, AI utils |
+| `chatSystemPromptTemplate` | string | built-in default: friendly assistant with `{{SUMMARY}}`, `video title: {{TITLE}}`, and full `{{TRANSCRIPT}}` when the summary is not enough; reply starts with a terse one-liner of the summary | SettingsPanel, AI utils |
 | `maxTokens` | number \| absent | absent (None) | SettingsPanel, AI utils |
-| `summaryUserProfiles` | SummaryUserProfile[] | `[]` | SettingsPanel, SummaryButton, ProfileFilter |
-| `selectedSummaryProfileId` | string | `"default"` | SummaryButton, ProfileFilter |
+| `summaryUserProfiles` | SummaryUserProfile[] | on **install**: **AiFocus** (`aifocus`), **News** (`news`: Sky News, Ed Conway), and **Finance** (`finance`: finance, Patrick Boyle, Sasha Yanshin); if the key is absent, readers treat it as `[]` | SettingsPanel, SummaryButton, ProfileFilter |
+| `selectedSummaryProfileId` | string | on **install**: `"aifocus"`; if unset, `"default"` (**All**) | SummaryButton, ProfileFilter |
 | `metadataHoverEnabled` | boolean | `false` | SettingsPanel (Debug tab), videoLinkTooltips |
 | `profileFilterHideNonMatchingCompact` | boolean | `false` | SettingsPanel (Profiles tab Auto-hide), SummaryButton watch **Auto-hide** checkboxes, videoProfileFilter |
 

@@ -9,6 +9,9 @@ export interface AIProvider {
   requiresModelInput?: boolean;
 }
 
+/** OpenRouter model used when the user has not chosen one. */
+export const DEFAULT_MODEL_ID = "xiaomi/mimo-v2.5";
+
 export const providers: AIProvider[] = [
   {
     name: "ChatGPT",
@@ -31,7 +34,7 @@ export const providers: AIProvider[] = [
   {
     name: "OpenRouter",
     baseUrl: "https://openrouter.ai/api/v1",
-    model: "openai/gpt-4-turbo",
+    model: DEFAULT_MODEL_ID,
     supportsModelList: true,
   },
   {
@@ -58,3 +61,8 @@ export const providers: AIProvider[] = [
     requiresModelInput: true,
   },
 ];
+
+/** Provider shown when `selectedProvider` is unset. */
+export function defaultAiProvider(): AIProvider {
+  return providers.find((p) => p.name === "OpenRouter") ?? providers[0];
+}
