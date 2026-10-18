@@ -1,22 +1,22 @@
 # ZoneMode — Product Requirements & Event Flow
 
-see **[docs/GLOSSARY.md](GLOSSARY.md)** of terms which the developer will use to keep prompts unambiguous 
+see **[TERMS.md](TERMS.md)** of terms which the developer will use to keep prompts unambiguous 
 
-Chrome extension that injects a summarize UI on YouTube watch pages, provides AI-powered video summaries, and supports profile-based keyword filtering of sidebar videos. **Engineering tradeoffs** (MV3, Cache API, InnerTube, bundling) are summarized in **[HURDLES.md](HURDLES.md)** alongside this PRD. **Rendered diagrams** (sequence + flowcharts, Mermaid): **docs/ARCHITECTURE.md** — visible on the GitHub repo without extra tools.
+Chrome extension that injects a summarize UI on YouTube watch pages, provides AI-powered video summaries, and supports profile-based keyword filtering of sidebar videos. **Engineering tradeoffs** (MV3, Cache API, InnerTube, bundling) are summarized in **[HURDLES.md](HURDLES.md)** alongside this PRD. **Rendered diagrams** (sequence + flowcharts, Mermaid): **[ARCHITECTURE.md](ARCHITECTURE.md)** — visible on the GitHub repo without extra tools.
 
-**Manifest**: no extra `host_permissions`. `permissions` still includes `tabs` so the classifier test-bench can relay `TEST_BENCH_GET_METADATA_SNAPSHOT` into `youtube.com` tabs (see **HURDLES §18**). 
+**Manifest**: no extra `host_permissions`. `permissions` still includes `tabs` so the classifier test-bench can relay `TEST_BENCH_GET_METADATA_SNAPSHOT` into `youtube.com` tabs (see **[HURDLES §18](HURDLES.md)**). 
 
 `content_security_policy.extension_pages` uses default `script-src 'self'` (no `wasm-unsafe-eval` needed after ONNX removal). 
 
-**Innertube** `getBasicInfo` slices for profile-filter metadata run in the **watch tab** via `youtubei.js` (`profileFilterMetaCache.ts`; see **HURDLES §9**).
+**Innertube** `getBasicInfo` slices for profile-filter metadata run in the **watch tab** via `youtubei.js` (`profileFilterMetaCache.ts`; see **[HURDLES §9](HURDLES.md)**).
 
 **Dev — classifier test bench**: `test-bench/index.html` + `test-bench/index.js`. Rows come from bundled **sample JSON** or `TEST_BENCH_GET_METADATA_SNAPSHOT` (`tabs`). **Reclassify** calls shared `finalizeProfileVideoResult` (production `metadata_exact` path — no ONNX). 
 
 Open `chrome-extension://…/test-bench/index.html` after **Load unpacked** → `dist/`. 
 
-Spec: `docs/PRD-test-bench.md`. 
+Spec: **[PRD-test-bench.md](PRD-test-bench.md)**. 
 
-Released UI details: **ENHANCEMENTS**.
+Released UI details: **[ENHANCEMENTS.md](ENHANCEMENTS.md)**.
 
 ```
 ┌─────────────────────────────────────────────────────┐
@@ -141,6 +141,7 @@ ON click "Summarize" button:
 
     title = watch-page title (`og:title` / document.title) for optional {{TITLE}} placeholders
     result = generateSummary(subtitles, profileKeywords, title)
+        model = stored selectedModel, or provider.model when that key is empty
     display summary text + metadata (model, tokens, time, cost)
     keep subtitles + title for Ask Questions
     set loading = false
@@ -148,6 +149,7 @@ ON click "Summarize" button:
 ON submit Ask Questions:
     system = chat template with {{SUMMARY}} = displayed summary, {{TITLE}} = title from Summarize, {{TRANSCRIPT}} = subtitles from that Summarize
     askQuestion(question, history)
+        model = same fallback as Summarize (OpenRouter → xiaomi/mimo-v2.5)
 
 ON change profile <select>:
     update local selectedProfileId
@@ -520,7 +522,7 @@ The extension uses **`createLogger`** for normal logs. **PRD-tagged** lines (`pr
 |-----|------|---------|---------|
 | `apiKey` | string | `""` | SettingsPanel, SummaryButton, Background |
 | `selectedProvider` | AIProvider object | **OpenRouter** when unset; install writes that provider | SettingsPanel, SummaryButton, Background |
-| `selectedModel` | string | **`xiaomi/mimo-v2.5`** when unset (OpenRouter’s model); install writes that id | SettingsPanel, SummaryButton |
+| `selectedModel` | string | **`xiaomi/mimo-v2.5`** when unset (OpenRouter’s model); install writes that id. Summarize and Ask Questions send `provider.model` when this key is empty | SettingsPanel, SummaryButton, AI utils |
 | `customBaseUrl` | string | `""` | SettingsPanel |
 | `customModel` | string | `""` | SettingsPanel |
 | `summaryPromptTemplate` | string | built-in default: concise markdown summary of `{{TRANSCRIPT}}` with a **Key Points** section, formatting rules, and no intro phrase; no `{{TITLE}}` in this template | SettingsPanel, AI utils |

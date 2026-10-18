@@ -193,14 +193,21 @@ async function completeCompletion(
     );
   }
 
-  const rawModel =
+  const storedModel =
     typeof selectedModel === "string" ? selectedModel.trim() : "";
-  if (!rawModel) {
+  // UI already shows provider.model when selectedModel was never written.
+  const model = storedModel || provider.model.trim();
+  if (!model) {
     throw new Error(
       "No model selected. Open the extension settings and choose a model."
     );
   }
-  const model = rawModel;
+  if (!storedModel) {
+    log.log("selectedModel unset; using provider model", {
+      provider: provider.name,
+      model,
+    });
+  }
 
   if (provider.name === "OpenRouter") {
     return completeOpenRouter(messages, model, apiKey, maxTokens);

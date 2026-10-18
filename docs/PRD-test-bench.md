@@ -2,7 +2,7 @@
 
 # Classifier test bench — PRD appendix
 
-Companion to the **[docs/PRD.md](docs/PRD.md)**. 
+Companion to the **[PRD.md](PRD.md)**. 
 Describes requirements for the  `chrome-extension://…/test-bench/index.html` dev page bundled under `dist/test-bench/`.
 
 ## Purpose

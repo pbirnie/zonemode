@@ -1,7 +1,7 @@
 ---
 name: sync-prd
 description: >-
-  Keeps the repository root PRD.md aligned with shipped extension behavior:
+  Keeps docs/PRD.md aligned with shipped extension behavior:
   architecture diagram, event-to-action pseudo-code, storage keys, and CSS
   outline rules. Use whenever changing content scripts, popup/settings UI,
   background messaging, manifest permissions, or any user-visible flow
@@ -12,7 +12,7 @@ description: >-
 
 ## File
 
-- **[PRD.md](../../../PRD.md)** at the **repository root** (not under `src/`).
+- **[PRD.md](../../../docs/PRD.md)** under **`docs/`**.
 
 ## When to update (same change / same PR as the code)
 
@@ -37,7 +37,7 @@ Update **PRD.md** whenever you change anything that would make the PRD **wrong o
 - **Event → action pseudo-code** (load, click, `yt-navigate-finish`, `mouseover`, `MutationObserver`, `chrome.storage`, `runtime.sendMessage`, etc.).
 - **Cross-cutting tables** (e.g. storage keys, outline CSS states) when they are part of the product contract.
 
-**Do not** turn PRD into a second **ENHANCEMENTS.md**; release notes and “what shipped when” stay in **ENHANCEMENTS.md** / **popupChangelog** per project rules.
+**Do not** turn PRD into a second **[ENHANCEMENTS.md](../../../docs/ENHANCEMENTS.md)**; release notes and “what shipped when” stay there and in **popupChangelog** per project rules.
 
 ## How to sync
 

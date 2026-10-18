@@ -29,7 +29,7 @@ https://github.com/avarayr/youtube-summarizer-oss
 - Not possible to configure the summarisation prompt
 - Bugs downloading the video transcript
 
-## What I Learnt from Using This as a Starting Point
+## What I Learnt from Using youtube-summarizer-oss as starting point
 
 - Basic project layout for a Chrome extension
 - How to inject content into a YouTube page
@@ -67,7 +67,39 @@ In the end, a complex video classifier was abandoned because, for a lot of video
 
 It would have been better to start with the test bench page and evaluate effectiveness before going through all the complexity of service pages.
 
-### Write a 
+## BERT one shot classifier
+
+The classifier that was attempted was a BERT one shot classifier that was downloaded from hugging face and ran inside the browser via the ONNF api 
+Knowlege on how to do this simply came from talking to grok about possible ways to solve the problem of video classification.  
+This was abandoned but the code base and simple keyword matching works well
+
+## Vestigial (dead) code 
+
+Iterating on features is very fast and simple but over time the code base will built up dead code fragments or libraries.
+
+Vestigial code is the term for that. It is code that remains after the feature it belonged to was abandoned. It may still compile, and sometimes still run, but it no longer serves the product.
+ 
+
+### Terms.md
+
+Write a seperate file to capture terms so that ai and you can use the same term to refer to components on the page. This is especially important when working in a domain that you do not know well. If you do not know the correct term ai would like to use for a concept - for example the a  
+
+## Hurdles.md
+
+Have a rule to capture technical obstacles as they have been encountered. working with technology 
+
+## Enhancements.md 
+
+Have a rule to capture what features have been added. This is used for release notes. 
+
+## Prd.md
+
+start a project by defining the requirements in a prd (product requirements document). have a conversation with grok to generate this document and human-review it as the starting point on project setup
+
+## Architecture.md 
+
+have a rule to update a high level 
+including pseudocode is especially useful when working with a language you do not know
 
 ## Summary
 

@@ -2,7 +2,7 @@
 
 Human-readable log of **user-visible** and **noteworthy** changes to the ZoneMode Chrome extension.
 
-Agents and contributors should add changelog sections here whenever they ship new behavior—see [.cursor/rules/enhancements-log.mdc](.cursor/rules/enhancements-log.mdc) (always-on Cursor rule). Under **Changelog**, keep **Unreleased** (when used) and version headings **newest first**; older baselines last.
+Agents and contributors should add changelog sections here whenever they ship new behavior—see [enhancements-log.mdc](../.cursor/rules/enhancements-log.mdc) (always-on Cursor rule). Under **Changelog**, keep **Unreleased** (when used) and version headings **newest first**; older baselines last.
 
 ## Changelog
 
@@ -11,7 +11,7 @@ Agents and contributors should add changelog sections here whenever they ship ne
 - **Settings popup**: The window no longer adds its own scrollbar on top of the page scroll. The popup scrolls once; a long keyword list still scrolls inside its box.
 - **Toolbar icon**: The extension icon is the ZoneMode mark (`src/static/icons/`, sizes 16, 32, 48, and 128) instead of the generated red “S”.
 - **Chat prompt**: Default system message includes the summary, video title, and full transcript from Summarize. Replies should start with a terse one-liner of the summary, then a longer answer. A saved chat prompt stays until you edit it or use **Reset prompts to defaults**.
-- **Install defaults (API and summary prompt)**: Provider defaults to **OpenRouter** and the model to `xiaomi/mimo-v2.5` when nothing is saved. The built-in summary prompt is a concise markdown **Key Points** summary of `{{TRANSCRIPT}}` (formatting rules, no intro line, no `{{TITLE}}`). A saved prompt or provider is left as-is; **Reset prompts to defaults** applies the new summary text.
+- **Install defaults (API and summary prompt)**: Provider defaults to **OpenRouter** and the model to `xiaomi/mimo-v2.5` when nothing is saved. Summarize and Ask Questions send that model when `selectedModel` is empty, matching the model shown in the UI. The built-in summary prompt is a concise markdown **Key Points** summary of `{{TRANSCRIPT}}` (formatting rules, no intro line, no `{{TITLE}}`). A saved prompt or provider is left as-is; **Reset prompts to defaults** applies the new summary text.
 - **Install defaults**: A new install adds **AiFocus** (selected on the watch bar; keywords: AI, LLM, Artificial Intelligence, Anthropic, Claude code, Cursor, Fireship, Dwarkesh Patel, Matt Pocock), **News** (Sky News, Ed Conway). Updating an existing install does not replace saved profiles.
 - **Name**: The extension shows as **ZoneMode** (toolbar, popup title, test bench tab). Package name and GitHub repo stay **zonemode**. 
 - **Watch page**: Summarize bar attaches **below** `ytd-watch-metadata` when that node exists so it stays visible above YouTube’s player/grid layering (fallback: first child of `#above-the-fold` until metadata mounts). `#zonemode-extension-container` also gets `z-index: 2` for stray overlays.

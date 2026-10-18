@@ -64,7 +64,7 @@ Truncate long strings for piping to review tools: prefer slicing **`message.cont
 
 ## Related
 
-- Repo **engineering obstacles** from shipped work: **[HURDLES.md](../../HURDLES.md)**
+- Repo **engineering obstacles** from shipped work: **[HURDLES.md](../../docs/HURDLES.md)**
 - Marketplace skill (may lag Cursor on-disk layout): **[`../skills/paultyng-skill-issue-analyze-sessions/SKILL.md`](../skills/paultyng-skill-issue-analyze-sessions/SKILL.md)**
 
 When that skill’s Phase 1 conflicts with this file, **prefer this rule** for path and schema on this project’s Cursor version.

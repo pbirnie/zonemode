@@ -5,7 +5,7 @@ alwaysApply: true
 
 # Maintain ENHANCEMENTS.md
 
-Whenever this work adds or materially changes **user-visible behavior**, update **[ENHANCEMENTS.md](../../ENHANCEMENTS.md)** in the **same change** (same PR / same chat session).
+Whenever this work adds or materially changes **user-visible behavior**, update **[ENHANCEMENTS.md](../../docs/ENHANCEMENTS.md)** in the **same change** (same PR / same chat session).
 
 ## Must update
 
@@ -25,15 +25,15 @@ Refactors, renames, tests-only changes, or comment-only edits that do **not** af
 3. Be concise: **what** changed and **who cares** (one line each).
 4. Link optional paths only when they help readers (`src/…`), not every file touched.
 
-Before finishing the task, confirm **ENHANCEMENTS.md** reflects what an end user would notice.
+Before finishing the task, confirm **[ENHANCEMENTS.md](../../docs/ENHANCEMENTS.md)** reflects what an end user would notice.
 
 ## Popup changelog
 
-User-facing bullets also appear in **[`src/shared/popupChangelog.ts`](../../src/shared/popupChangelog.ts)** (plain text for the toolbar popup). When you add or change **Unreleased** / version sections in **ENHANCEMENTS.md**, update **`POPUP_CHANGELOG`** in the same change so the popup stays accurate.
+User-facing bullets also appear in **[`src/shared/popupChangelog.ts`](../../src/shared/popupChangelog.ts)** (plain text for the toolbar popup). When you add or change **Unreleased** / version sections in **[ENHANCEMENTS.md](../../docs/ENHANCEMENTS.md)**, update **`POPUP_CHANGELOG`** in the same change so the popup stays accurate.
 
 ### Always include Unreleased items
 
-**Unreleased** bullets in `ENHANCEMENTS.md` **must** have a matching section in `POPUP_CHANGELOG` with `title: "Unreleased"` at the top of the array. This lets the developer confirm which build they are testing by checking the **Info** tab in the extension popup.
+**Unreleased** bullets in [`ENHANCEMENTS.md`](../../docs/ENHANCEMENTS.md) **must** have a matching section in `POPUP_CHANGELOG` with `title: "Unreleased"` at the top of the array. This lets the developer confirm which build they are testing by checking the **Info** tab in the extension popup.
 
 - Add the `"Unreleased"` section as soon as the first unreleased bullet is written.
 - Each bullet should be concise plain text (no markdown links).

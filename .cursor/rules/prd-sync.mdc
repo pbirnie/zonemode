@@ -1,14 +1,14 @@
 ---
 description: Keep PRD.md aligned with extension event flows when editing surfaced code
-globs: src/content/**/*, src/background/**/*, src/popup/**/*, src/shared/**/*, src/static/manifest/**/*, PRD.md
+globs: src/content/**/*, src/background/**/*, src/popup/**/*, src/shared/**/*, src/static/manifest/**/*, docs/PRD.md
 alwaysApply: false
 ---
 
 # PRD sync
 
-When your edits change **user-observable flows**, **events**, **storage keys**, **background message types**, or **manifest** behavior described in **[PRD.md](../../PRD.md)**:
+When your edits change **user-observable flows**, **events**, **storage keys**, **background message types**, or **manifest** behavior described in **[PRD.md](../../docs/PRD.md)**:
 
 1. **Read** the skill **[`../skills/sync-prd/SKILL.md`](../skills/sync-prd/SKILL.md)** and follow it.
 2. Update **PRD.md** in the **same change** so architecture, pseudo-code, and tables stay accurate.
 
-Do not use PRD as release notes; **ENHANCEMENTS.md** / **popupChangelog** stay the changelog (see enhancements rule).
+Do not use PRD as release notes; **[ENHANCEMENTS.md](../../docs/ENHANCEMENTS.md)** / **popupChangelog** stay the changelog (see enhancements rule).

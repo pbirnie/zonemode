@@ -1,8 +1,8 @@
 # Engineering hurdles
 
-This document records **non-obvious platform, browser, or API constraints** that forced a design or implementation change. Entries are numbered **`## 1.` … `## N.` in chronological order**: **oldest constraint first** (by first appearance in **parent** Cursor agent transcripts for this repo, where timestamps exist; otherwise by inferred development phase). For user-facing release notes see **ENHANCEMENTS.md**; for product behavior see **PRD.md**.
+This document records **non-obvious platform, browser, or API constraints** that forced a design or implementation change. Entries are numbered **`## 1.` … `## N.` in chronological order**: **oldest constraint first** (by first appearance in **parent** Cursor agent transcripts for this repo, where timestamps exist; otherwise by inferred development phase). For user-facing release notes see **[ENHANCEMENTS.md](ENHANCEMENTS.md)**; for product behavior see **[PRD.md](PRD.md)**.
 
-**Transcript source (analyze-sessions style):** Parent JSONL only — `~/.cursor/projects/c-projects-zonemode/agent-transcripts/<uuid>/<uuid>.jsonl` (not `subagents/`). Layout and `jq` notes: **`.cursor/rules/cursor-transcript-layout.mdc`**.
+**Transcript source (analyze-sessions style):** Parent JSONL only — `~/.cursor/projects/c-projects-zonemode/agent-transcripts/<uuid>/<uuid>.jsonl` (not `subagents/`). Layout and `jq` notes: **[cursor-transcript-layout.mdc](../.cursor/rules/cursor-transcript-layout.mdc)**.
 
 | Session UUID (parent) | First dated user turn | Theme (short) |
 |------------------------|------------------------|---------------|
@@ -23,9 +23,9 @@ This document records **non-obvious platform, browser, or API constraints** that
 
 ## 2. Release versioning must stay aligned across manifest, package, and changelogs
 
-**Obstacle.** Parent session **`29df97d9…`** (2026-05-03): shipping a version (“realse 1.0.5”) requires **`package.json`**, **`manifest.json`**, **ENHANCEMENTS.md**, and **`popupChangelog.ts`** to stay coherent; drift confuses testers and store submissions.
+**Obstacle.** Parent session **`29df97d9…`** (2026-05-03): shipping a version (“realse 1.0.5”) requires **`package.json`**, **`manifest.json`**, **[ENHANCEMENTS.md](ENHANCEMENTS.md)**, and **`popupChangelog.ts`** to stay coherent; drift confuses testers and store submissions.
 
-**Mitigation.** Treat version bumps as a **single atomic edit** across those files; repo rule **`.cursor/rules/enhancements-log.mdc`** (reverse-chronological changelog) encodes ordering expectations.
+**Mitigation.** Treat version bumps as a **single atomic edit** across those files; repo rule **[enhancements-log.mdc](../.cursor/rules/enhancements-log.mdc)** (reverse-chronological changelog) encodes ordering expectations.
 
 ---
 
@@ -41,7 +41,7 @@ This document records **non-obvious platform, browser, or API constraints** that
 
 **Obstacle.** Same **`efafd8c2…`** thread: streaming required **long-lived ports**, chunk queues, and coordinated errors; users hit **empty streams** (`tokens:0`) and unclear service-worker logs. Product direction oscillated (“remove streaming” / “change code back to support streaming”).
 
-**Mitigation.** Support both patterns over time: **`streamText`** + **`fullStream`/`textStream` diagnostics** when streaming; **`generateText`** for **`OPENROUTER_COMPLETE`** when non-streaming; **`.cursor/rules/api-logging.mdc`** + shared logger for outbound/response visibility.
+**Mitigation.** Support both patterns over time: **`streamText`** + **`fullStream`/`textStream` diagnostics** when streaming; **`generateText`** for **`OPENROUTER_COMPLETE`** when non-streaming; **[api-logging.mdc](../.cursor/rules/api-logging.mdc)** + shared logger for outbound/response visibility.
 
 ---
 
@@ -57,7 +57,7 @@ This document records **non-obvious platform, browser, or API constraints** that
 
 **Obstacle.** **`efafd8c2…`**: user could not extract a “zip” produced the wrong way on Windows; asked to use **`zip` not `tar`**.
 
-**Mitigation.** **`.cursor/skills/build-extension-zip/SKILL.md`** documents building **`extension-unpacked.zip`** via **PowerShell `ZipFile`** (or equivalent) from **`dist/`**; **`extension-unpacked.zip`** in **`.gitignore`**.
+**Mitigation.** **[build-extension-zip/SKILL.md](../.cursor/skills/build-extension-zip/SKILL.md)** documents building **`extension-unpacked.zip`** via **PowerShell `ZipFile`** (or equivalent) from **`dist/`**; **`extension-unpacked.zip`** in **`.gitignore`**.
 
 ---
 
@@ -89,7 +89,7 @@ This document records **non-obvious platform, browser, or API constraints** that
 
 **Obstacle.** ORT’s browser bundle loads WASM glue via dynamic `import()` of a runtime URL (minified as `(await import($)).default`). The HTML spec **disallows `import()` in `ServiceWorkerGlobalScope`**; vendored **`ort-wasm-*.mjs`** files also contain `import()`, so a post-build rewire of the main bundle alone still fails with **`no available backend found`** / **`import() is disallowed on ServiceWorkerGlobalScope`**.
 
-**Mitigation.** **Zero-shot classification runs in the MV3 offscreen document** (`src/offscreen/zeroShotClassifier.ts`), where extension-scoped dynamic `import()` is allowed. The **watch-page content script** sends ops via **`chrome.runtime.connect`** (**`extensionOffscreenRpc`**: `src/shared/extensionOffscreenRpc.ts`, re-exported as `src/content/offscreenClient.ts` → **`CONTENT_OFFSCREEN_RPC_PORT_NAME`** → `orchestrator.forwardToOffscreen`). **`preloadOrtWasmBinary`** pre-fetches WASM bytes via `fetch()` in offscreen. The **classifier test bench** uses the same port client + dedicated thin module [`testBenchZeroShot.ts`](../src/test-bench/testBenchZeroShot.ts) so **`test-bench/index.js` does not bundle a second Transformers/ONNX/MobileBERT stack**. The **service worker** does **not** bundle Transformers.js / ORT (see **`.cursor/rules/mv3-sw-orchestrator.mdc`**).
+**Mitigation.** **Zero-shot classification runs in the MV3 offscreen document** (`src/offscreen/zeroShotClassifier.ts`), where extension-scoped dynamic `import()` is allowed. The **watch-page content script** sends ops via **`chrome.runtime.connect`** (**`extensionOffscreenRpc`**: `src/shared/extensionOffscreenRpc.ts`, re-exported as `src/content/offscreenClient.ts` → **`CONTENT_OFFSCREEN_RPC_PORT_NAME`** → `orchestrator.forwardToOffscreen`). **`preloadOrtWasmBinary`** pre-fetches WASM bytes via `fetch()` in offscreen. The **classifier test bench** uses the same port client + dedicated thin module [`testBenchZeroShot.ts`](../src/test-bench/testBenchZeroShot.ts) so **`test-bench/index.js` does not bundle a second Transformers/ONNX/MobileBERT stack**. The **service worker** does **not** bundle Transformers.js / ORT (see **[mv3-sw-orchestrator.mdc](../.cursor/rules/mv3-sw-orchestrator.mdc)**).
 
 ---
 
@@ -137,7 +137,7 @@ This document records **non-obvious platform, browser, or API constraints** that
 
 **Obstacle.** MV3 **service workers** are **`ServiceWorkerGlobalScope`**: dynamic **`import()`** (ORT WASM glue), **youtubei.js** first-party parity, and bundling **OpenRouter + AI SDK** next to short-lived SW lifetimes all caused brittle builds and platform mismatches (see HURDLES **§3**, **§9**, **§10**).
 
-**Mitigation.** **`chrome.offscreen.createDocument`** (`offscreen/offscreen.html` + bundled **`offscreen/offscreen.js`**) runs **Innertube metadata**, **Transformers zero-shot**, **`OPENROUTER_COMPLETE`**, and **`PROXY_REQUEST`** **`fetch`**. The SW (`background/index.ts`) only **routes** tab/popup messages and **`OFFSCREEN_RPC`** through **`orchestrator.ts`**. Rule: **`.cursor/rules/mv3-sw-orchestrator.mdc`**.
+**Mitigation.** **`chrome.offscreen.createDocument`** (`offscreen/offscreen.html` + bundled **`offscreen/offscreen.js`**) runs **Innertube metadata**, **Transformers zero-shot**, **`OPENROUTER_COMPLETE`**, and **`PROXY_REQUEST`** **`fetch`**. The SW (`background/index.ts`) only **routes** tab/popup messages and **`OFFSCREEN_RPC`** through **`orchestrator.ts`**. Rule: **[mv3-sw-orchestrator.mdc](../.cursor/rules/mv3-sw-orchestrator.mdc)**.
 
 ---
 
@@ -145,7 +145,7 @@ This document records **non-obvious platform, browser, or API constraints** that
 
 **Obstacle.** Without an explicit **`content_security_policy.extension_pages`**, Chrome’s default for MV3 is **`script-src 'self'`** only — **`WebAssembly.instantiate()`** is rejected (“**wasm-eval** / **unsafe-eval** … not allowed … **script-src 'self'**”), so **ONNX Runtime Web** cannot run in **extension pages** (e.g. **`test-bench/index.html`**, offscreen document, popup) even for same-origin packaged **`.wasm`** assets.
 
-**Mitigation.** Declare the documented minimum policy in **`manifest.json`**: **`script-src 'self' 'wasm-unsafe-eval'; object-src 'self';`** (`[src/static/manifest/manifest.json](src/static/manifest/manifest.json)`). **`'unsafe-eval'`** remains disallowed for extension pages; **`'wasm-unsafe-eval'`** is the narrow WebAssembly carve-out. See [Chrome — Manifest CSP](https://developer.chrome.com/docs/extensions/mv3/manifest/content_security_policy/).
+**Mitigation.** Declare the documented minimum policy in **`manifest.json`**: **`script-src 'self' 'wasm-unsafe-eval'; object-src 'self';`** ([`src/static/manifest/manifest.json`](../src/static/manifest/manifest.json)). **`'unsafe-eval'`** remains disallowed for extension pages; **`'wasm-unsafe-eval'`** is the narrow WebAssembly carve-out. See [Chrome — Manifest CSP](https://developer.chrome.com/docs/extensions/mv3/manifest/content_security_policy/).
 
 ---
 
@@ -153,7 +153,7 @@ This document records **non-obvious platform, browser, or API constraints** that
 
 **Obstacle.** The test-bench **extension page** cannot access another tab’s content-script in-memory **`Map`**. **`activeTab`** does not grant the background enough access to **arbitrary** open **`youtube.com`** tabs from the test-bench UI.
 
-**Mitigation.** **`tabs`** in **`manifest.json`** so the **service worker** can **`chrome.tabs.query`** YouTube URLs and **`tabs.sendMessage`** **`TEST_BENCH_GET_METADATA_SNAPSHOT`** to **`content/testBenchBridge.ts`**, which returns **`exportProfileFilterMetaCacheSnapshotAsync`** (merges **L1** `Map` + **`chrome.storage.local`** rows) from **`profileFilterMetaCache.ts`**. See **[docs/PRD-test-bench.md](docs/PRD-test-bench.md)** §4.0a.
+**Mitigation.** **`tabs`** in **`manifest.json`** so the **service worker** can **`chrome.tabs.query`** YouTube URLs and **`tabs.sendMessage`** **`TEST_BENCH_GET_METADATA_SNAPSHOT`** to **`content/testBenchBridge.ts`**, which returns **`exportProfileFilterMetaCacheSnapshotAsync`** (merges **L1** `Map` + **`chrome.storage.local`** rows) from **`profileFilterMetaCache.ts`**. See **[PRD-test-bench.md](PRD-test-bench.md)** §4.0a.
 
 ---
 
@@ -213,4 +213,4 @@ This document records **non-obvious platform, browser, or API constraints** that
 
 ### Maintaining this file
 
-When a fix is forced by a **platform / browser / extension / dependency** limitation, append the next section as **`## {N+1}. …`** (see **`.cursor/rules/hurdles-log.mdc`**) and keep **chronological** order — insert in-order by **discovery date** if known, or append at the end with a short **“Approx. era”** note in the **Obstacle** paragraph.
+When a fix is forced by a **platform / browser / extension / dependency** limitation, append the next section as **`## {N+1}. …`** (see **[hurdles-log.mdc](../.cursor/rules/hurdles-log.mdc)**) and keep **chronological** order — insert in-order by **discovery date** if known, or append at the end with a short **“Approx. era”** note in the **Obstacle** paragraph.

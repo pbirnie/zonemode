@@ -4,7 +4,7 @@ alwaysApply: true
 ---
 # Maintain HURDLES.md
 
-Whenever this work **fixes a bug or changes architecture** because of a **hard limitation of the platform, browser, Chrome extension model, or a dependency’s assumptions** (not ordinary application logic), add a **new numbered entry** to **[HURDLES.md](../../HURDLES.md)** in the **same change** (same PR / same chat session).
+Whenever this work **fixes a bug or changes architecture** because of a **hard limitation of the platform, browser, Chrome extension model, or a dependency’s assumptions** (not ordinary application logic), add a **new numbered entry** to **[HURDLES.md](../../docs/HURDLES.md)** in the **same change** (same PR / same chat session).
 
 ## What belongs here
 
@@ -19,13 +19,13 @@ Whenever this work **fixes a bug or changes architecture** because of a **hard l
 ## What does not belong here
 
 - Routine refactors, renames, typos, or preference-only UI tweaks.
-- User-visible changelog material that belongs in **ENHANCEMENTS.md** / **popupChangelog** (you may still update those separately). **HURDLES** is for **engineering archaeology** and root-cause detail.
+- User-visible changelog material that belongs in **[ENHANCEMENTS.md](../../docs/ENHANCEMENTS.md)** / **popupChangelog** (you may still update those separately). **HURDLES** is for **engineering archaeology** and root-cause detail.
 
 ## How to write entries
 
 1. **Numbering:** Sections are **`## 1.` … `## N.` in chronological order (oldest first).** New work usually appends **`## {N+1}. …`** at the end. If you insert a dated hurdle **between** existing ones, **renumber** all following **`##` headings** so order stays chronological.
 2. **Structure:** Use two short bold lead-ins per entry: **`Obstacle.`** then **`Mitigation.`** (same style as existing entries).
 3. **Tone:** Technical and precise: state the **mechanism** (API error, spec restriction, Chrome behavior), name **relevant files or modules** when it helps navigation, and describe the **concrete workaround** (not marketing language).
-4. **Order:** Append new hurdles in **chronological** order (oldest first), matching **[HURDLES.md](../../HURDLES.md)** — insert by **discovery date** when known, or append at the end with an **“Approx. era”** note. Renumber **`## N`** if you insert mid-file. Do not renumber old entries casually unless consolidating.
+4. **Order:** Append new hurdles in **chronological** order (oldest first), matching **[HURDLES.md](../../docs/HURDLES.md)** — insert by **discovery date** when known, or append at the end with an **“Approx. era”** note. Renumber **`## N`** if you insert mid-file. Do not renumber old entries casually unless consolidating.
 
-Before finishing a qualifying fix, confirm **HURDLES.md** contains a new **`## N. …`** section that would let another engineer reconstruct **why** the code looks the way it does.
+Before finishing a qualifying fix, confirm **[HURDLES.md](../../docs/HURDLES.md)** contains a new **`## N. …`** section that would let another engineer reconstruct **why** the code looks the way it does.
